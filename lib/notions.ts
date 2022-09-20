@@ -4,19 +4,27 @@ const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
 
-export const getDatabase = async (databaseId: string) => {
+export const fetchFrontMatter = async (databaseId: string) => {
+  const response = await notion.databases.retrieve({
+    database_id: databaseId,
+  });
+  return response;
+};
+
+export const fetchDatabase = async (databaseId: string) => {
   const response = await notion.databases.query({
     database_id: databaseId,
   });
+
   return response.results;
 };
 
-export const getPage = async (pageId: string) => {
+export const fetchPage = async (pageId: string) => {
   const response = await notion.pages.retrieve({ page_id: pageId });
   return response;
 };
 
-export const getBlocks = async (blockId: string) => {
+export const fetchBlocks = async (blockId: string) => {
   const blocks = [];
   let cursor: string | undefined;
   while (true) {
