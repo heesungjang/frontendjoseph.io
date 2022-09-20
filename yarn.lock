@@ -1790,6 +1790,11 @@ node-fetch@^2.6.1:
   dependencies:
     whatwg-url "^5.0.0"
 
+notion-api-types@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/notion-api-types/-/notion-api-types-1.0.0.tgz#4a1956691ffd50be489525ce6ad81da15089c32c"
+  integrity sha512-vUE43eJwma9f5v1rAqW7/LlkbiukiZC5QPoYAYt0Bpr9U/C7oOGBmfP2PbGArp8Hs9IAOWNwBpdQFL8RoSf1gw==
+
 object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"

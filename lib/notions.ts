@@ -1,4 +1,4 @@
-import { Client } from '@notionhq/client';
+import { Client, isFullDatabase, isFullPage } from '@notionhq/client';
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -8,15 +8,29 @@ export const fetchFrontMatter = async (databaseId: string) => {
   const response = await notion.databases.retrieve({
     database_id: databaseId,
   });
+
+  if (!isFullDatabase(response)) {
+    return;
+  }
+
   return response;
 };
 
-export const fetchDatabase = async (databaseId: string) => {
+export const fetchPosts = async (databaseId: string) => {
+  const posts = [];
   const response = await notion.databases.query({
     database_id: databaseId,
   });
 
-  return response.results;
+  for (const page of response.results) {
+    if (!isFullPage(page)) {
+      continue;
+    } else {
+      posts.push(page);
+    }
+  }
+
+  return posts;
 };
 
 export const fetchPage = async (pageId: string) => {

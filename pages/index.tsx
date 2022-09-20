@@ -1,13 +1,20 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
 import { media } from '../styles/media';
-import { fetchDatabase, fetchFrontMatter } from '../lib/notions';
+import { fetchPosts, fetchFrontMatter } from '../lib/notions';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
-const Home: NextPage = ({ posts, front }: any) => {
-  console.log(front);
-  // console.log(posts);
+type IMainProps = {
+  posts: [any];
+  frontmatter: {
+    title: string;
+    description: string;
+  };
+};
+
+const Main: NextPage<IMainProps> = ({ posts, frontmatter }) => {
+  console.log(posts);
   return <TestWrapper></TestWrapper>;
 };
 
@@ -20,16 +27,20 @@ const TestWrapper = styled.div`
   `}
 `;
 
-export default Home;
+export default Main;
 
 export const getStaticProps = async () => {
   if (databaseId) {
-    const database = await fetchDatabase(databaseId);
-    const frontInfo = await fetchFrontMatter(databaseId);
-    console.log(frontInfo);
+    const posts = await fetchPosts(databaseId);
+    const frontmatter = await fetchFrontMatter(databaseId);
+
     return {
       props: {
-        posts: database,
+        posts,
+        frontmatter: {
+          title: frontmatter?.title[0].plain_text,
+          description: frontmatter?.description[0].plain_text,
+        },
       },
       revalidate: 1,
     };
