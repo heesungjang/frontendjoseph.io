@@ -26,7 +26,31 @@ export const fetchPosts = async (databaseId: string) => {
     if (!isFullPage(page)) {
       continue;
     } else {
-      posts.push(page);
+      console.log(page);
+      posts.push({
+        cover:
+          page.cover?.type === 'external' ? page.cover.external.url : undefined,
+        title:
+          page.properties.Name.type === 'title'
+            ? page.properties.Name.title[0].plain_text
+            : undefined,
+        tags:
+          page.properties.Tags.type === 'multi_select'
+            ? page.properties.Tags.multi_select
+            : undefined,
+        description:
+          page.properties.Description.type === 'rich_text'
+            ? page.properties.Description.rich_text[0].plain_text
+            : undefined,
+        isHidden:
+          page.properties.hidden.type === 'checkbox'
+            ? page.properties.hidden.checkbox
+            : false,
+        date:
+          page.properties.Date.type === 'date'
+            ? page.properties.Date.date?.start
+            : undefined,
+      });
     }
   }
 

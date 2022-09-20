@@ -5,8 +5,17 @@ import { fetchPosts, fetchFrontMatter } from '../lib/notions';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
+export interface Post {
+  cover: string;
+  title: string;
+  tags: string[];
+  description: string;
+  isHidden: boolean;
+  createdAt: string;
+}
+
 type IMainProps = {
-  posts: [any];
+  posts: Post[];
   frontmatter: {
     title: string;
     description: string;
@@ -14,8 +23,7 @@ type IMainProps = {
 };
 
 const Main: NextPage<IMainProps> = ({ posts, frontmatter }) => {
-  console.log(posts);
-  return <TestWrapper></TestWrapper>;
+  return null;
 };
 
 const TestWrapper = styled.div`
