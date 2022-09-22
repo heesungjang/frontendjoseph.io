@@ -14,16 +14,14 @@ const FooterWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin: 40px 0;
-  background-color: red;
 
   ${media.greaterThan('md')`
   width: 620px;
-  background-color: blue;
+  
   `};
 
   ${media.greaterThan('lg')`
   width: 720px;
-  background-color: red;
   `};
 `;
 
