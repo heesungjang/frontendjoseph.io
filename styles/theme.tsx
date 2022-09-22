@@ -21,13 +21,32 @@ const font = {
   xl5: `${FONT_5XL / 16}rem`,
   xl6: `${FONT_6XL / 16}rem`,
 };
+
+const fontWeight = {
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+};
+
 export const light = {
   font,
+  fontWeight,
   bg: '#FFFFFF',
+  white: '#F5F5F5',
+  black: '#262626',
+  grey: '#79797A',
+  darkGrey: '#404040',
 };
 export const dark: ThemeType = {
   font,
+  fontWeight,
   bg: '#171717',
+  white: '#F5F5F5',
+  black: '#262626',
+  grey: '#888888',
+  darkGrey: '#D4D4D4',
 };
 
 const theme = light;
