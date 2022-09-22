@@ -50,6 +50,7 @@ export const fetchPosts = async (databaseId: string) => {
           page.properties.Date.type === 'date'
             ? page.properties.Date.date?.start
             : undefined,
+        id: page.id,
       });
     }
   }

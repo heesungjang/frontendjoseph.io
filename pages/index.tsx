@@ -2,37 +2,51 @@ import type { NextPage } from 'next';
 import styled from 'styled-components';
 import { media } from '../styles/media';
 import { fetchPosts, fetchFrontMatter } from '../lib/notions';
+import Header from '../components/Header';
+import Content from '../components/Content';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
+export interface Tag {
+  id: string;
+  name: string;
+  color: string;
+}
 export interface Post {
+  id: string;
   cover: string;
   title: string;
-  tags: string[];
+  tags: Tag[];
   description: string;
   isHidden: boolean;
   createdAt: string;
 }
 
-type IMainProps = {
+export interface Frontmatter {
+  title: string;
+  description: string;
+}
+
+type MainProps = {
   posts: Post[];
-  frontmatter: {
-    title: string;
-    description: string;
-  };
+  frontmatter: Frontmatter;
 };
 
-const Main: NextPage<IMainProps> = ({ posts, frontmatter }) => {
-  return null;
+const Main: NextPage<MainProps> = ({ posts, frontmatter }) => {
+  return (
+    <MainWrapper>
+      <Header />
+      <Content posts={posts} frontmatter={frontmatter} />
+    </MainWrapper>
+  );
 };
 
-const TestWrapper = styled.div`
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  ${media.greaterThan('sm')`
-    background-color:blue
-  `}
+const MainWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default Main;

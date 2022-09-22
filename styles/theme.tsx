@@ -23,9 +23,11 @@ const font = {
 };
 export const light = {
   font,
+  bg: '#FFFFFF',
 };
 export const dark: ThemeType = {
   font,
+  bg: '#171717',
 };
 
 const theme = light;
