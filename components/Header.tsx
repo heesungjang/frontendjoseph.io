@@ -29,7 +29,7 @@ const HeaderWrapper = styled.div<{ scrollPosition: number }>`
   display: flex;
   width: 100%;
   position: sticky;
-  color: ${(p) => p.theme.grey};
+  color: ${(p) => p.theme.gray};
 
   margin-bottom: 40px;
   justify-content: center;
@@ -64,7 +64,7 @@ const HeaderContent = styled.div`
 
 const Nav = styled.span`
   font-size: ${(p) => p.theme.font.lg};
-  font-weight: ${(p) => p.theme.fontWeight.medium};
+  font-weight: ${(p) => p.theme.fontWeight.normal};
   cursor: pointer;
 `;
 

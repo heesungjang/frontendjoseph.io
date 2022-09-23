@@ -5,7 +5,7 @@ import { media } from '../styles/media';
 const Footer: React.FC = () => {
   return (
     <FooterWrapper>
-      <span>power by heesung</span>
+      <FooterText>Copyright © Heesung Jang</FooterText>
     </FooterWrapper>
   );
 };
@@ -23,6 +23,12 @@ const FooterWrapper = styled.div`
   ${media.greaterThan('lg')`
   width: 720px;
   `};
+`;
+
+const FooterText = styled.span`
+  font-size: ${(p) => p.theme.font.sm};
+  font-weight: ${(p) => p.theme.fontWeight.normal};
+  color: ${(p) => p.theme.gray};
 `;
 
 export default Footer;

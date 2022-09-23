@@ -4,13 +4,14 @@ import { media } from '../styles/media';
 import { fetchPosts, fetchFrontMatter } from '../lib/notions';
 import Header from '../components/Header';
 import Content from '../components/Content';
+import { NotionColorsTypes } from '../styles/theme';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export interface Tag {
   id: string;
   name: string;
-  color: string;
+  color: NotionColorsTypes;
 }
 export interface Post {
   id: string;

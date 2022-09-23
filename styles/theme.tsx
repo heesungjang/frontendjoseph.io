@@ -30,23 +30,49 @@ const fontWeight = {
   extrabold: 800,
 };
 
+export type NotionColorsTypes =
+  | 'default'
+  | 'gray'
+  | 'brown'
+  | 'orange'
+  | 'yellow'
+  | 'green'
+  | 'blue'
+  | 'purple'
+  | 'pink'
+  | 'red';
+const notionColors = {
+  default: '#fffffc',
+  gray: '#eae4e9',
+  brown: '#fde4cf',
+  orange: '#ffdab9',
+  yellow: '#fcf6bd',
+  green: '#d0f4de',
+  blue: '#a9def9',
+  purple: '#e4c1f9',
+  pink: '#f1c0e8',
+  red: '#f4989c',
+};
+
 export const light = {
   font,
   fontWeight,
+  notionColors,
   bg: '#FFFFFF',
   white: '#F5F5F5',
   black: '#262626',
-  grey: '#79797A',
-  darkGrey: '#404040',
+  gray: '#79797A',
+  darkgray: '#404040',
 };
 export const dark: ThemeType = {
   font,
   fontWeight,
+  notionColors,
   bg: '#171717',
   white: '#F5F5F5',
   black: '#262626',
-  grey: '#888888',
-  darkGrey: '#D4D4D4',
+  gray: '#888888',
+  darkgray: '#D4D4D4',
 };
 
 const theme = light;

@@ -34,7 +34,7 @@ export const fetchPosts = async (databaseId: string) => {
           cover:
             page.cover?.type === 'external' && page.cover.external.url
               ? page.cover.external.url
-              : '',
+              : 'https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg?w=2000',
           title:
             page.properties.Name.type === 'title' &&
             page.properties.Name?.title[0]?.plain_text,
