@@ -40,7 +40,7 @@ const HeaderWrapper = styled.div<{ scrollPosition: number }>`
   position: sticky;
   color: ${(p) => p.theme.gray};
 
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   justify-content: center;
   backdrop-filter: blur(8px);
   background-color: rgb(255, 255, 255, 0.7);

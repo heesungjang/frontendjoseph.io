@@ -7,32 +7,57 @@ import { Frontmatter } from '../../pages';
 
 // packages
 import styled from 'styled-components';
+import dynamic from 'next/dynamic';
 
 type DescriptionProps = {
   frontmatter: Frontmatter;
 };
 
+const Dog = dynamic(() => import('../main/Dog'), {
+  ssr: false,
+  loading: () => <div>loading...</div>,
+});
+
 const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
   return (
     <DescriptionWrapper>
-      <Title>{frontmatter.title}</Title>
-      <DescriptionText>{frontmatter.description}</DescriptionText>
-      <SearchContainer>
-        <SearchInput placeholder="Search posts..." />
-        <IconWrapper>
-          <Image
-            src="/assets/search_icon.png"
-            alt="search-box"
-            width={15}
-            height={15}
-          />
-        </IconWrapper>
-      </SearchContainer>
+      <div>
+        <Title>{frontmatter.title}</Title>
+        <DescriptionText>{frontmatter.description}</DescriptionText>
+        <SearchContainer>
+          <SearchInput placeholder="Search posts..." />
+          <IconWrapper>
+            <Image
+              src="/assets/search_icon.png"
+              alt="search-box"
+              width={15}
+              height={15}
+            />
+          </IconWrapper>
+        </SearchContainer>
+      </div>
+
+      {/* three js  image */}
+      <ThreeDContainer>
+        <Dog />
+      </ThreeDContainer>
     </DescriptionWrapper>
   );
 };
 
+const ThreeDContainer = styled.div`
+  width: 250px;
+  height: 230px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+`;
+
 const DescriptionWrapper = styled.div`
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  justify-content: space-between;
   div {
     color: ${(p) => p.theme.gray};
   }
