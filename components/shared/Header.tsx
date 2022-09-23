@@ -1,12 +1,17 @@
+// React & Next
 import React from 'react';
-import { slug } from '../shared/slug';
-import { media } from '../styles/media';
-import GithubIcon from '../public/assets/github.svg';
-
-// libs
-import styled from 'styled-components';
-import useScrollPosition from '../hooks/useScrollPosition';
 import Link from 'next/link';
+
+// assets
+import { slug } from './slug';
+import { media } from '../../styles/media';
+import GithubIcon from '../../public/assets/github.svg';
+
+// hooks
+import useScrollPosition from '../../hooks/useScrollPosition';
+
+// packages
+import styled from 'styled-components';
 
 const Header: React.FC = () => {
   const scrollPosition = useScrollPosition();
@@ -14,7 +19,11 @@ const Header: React.FC = () => {
   return (
     <HeaderWrapper scrollPosition={scrollPosition}>
       <HeaderContent>
-        <GithubIcon width={25} height={25} />
+        <Link href={slug.gitHub}>
+          <a target="_blank" rel="noopener noreferrer">
+            <GithubIcon width={25} height={25} />
+          </a>
+        </Link>
         <Link href="/about">
           <Nav>About</Nav>
         </Link>

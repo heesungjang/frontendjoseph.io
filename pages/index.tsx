@@ -1,10 +1,14 @@
+// Next
 import type { NextPage } from 'next';
-import styled from 'styled-components';
-import { media } from '../styles/media';
-import { fetchPosts, fetchFrontMatter } from '../lib/notions';
-import Header from '../components/Header';
-import Content from '../components/Content';
+
+// lib & components & styles
+import Header from '../components/shared/Header';
+import Content from '../components/main/Content';
 import { NotionColorsTypes } from '../styles/theme';
+import { fetchPosts, fetchFrontMatter } from '../lib/notions';
+
+// packages
+import styled from 'styled-components';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -52,6 +56,7 @@ const MainWrapper = styled.div`
 
 export default Main;
 
+// SSG
 export const getStaticProps = async () => {
   if (databaseId) {
     const posts = await fetchPosts(databaseId);
