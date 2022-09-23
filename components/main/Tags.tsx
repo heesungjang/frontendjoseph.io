@@ -8,7 +8,6 @@ type TagsProps = {
 };
 
 const Tags: React.FC<TagsProps> = ({ tags }) => {
-  console.log(tags);
   return (
     <TagsWrapper>
       {tags.map((tag) => (

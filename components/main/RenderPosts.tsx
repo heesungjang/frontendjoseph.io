@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 // pages & components & styles
 import { Post } from '../../pages';
-import { NotionColorsTypes } from '../../styles/theme';
+import { NotionColorsTypes, TagSize } from '../../styles/theme';
 
 // packages
 import styled from 'styled-components';
@@ -92,11 +92,10 @@ const BlogTitle = styled.h2`
   font-size: ${(p) => p.theme.font.xl2};
   font-weight: ${(p) => p.theme.fontWeight.medium};
   :hover {
-    box-shadow: 0 2px ${(p) => p.theme.gray};
+    text-decoration-line: underline;
+    text-decoration-color: ${(p) => p.theme.gray};
   }
   width: fit-content;
-
-  transition: all 0.1s ease-in;
 `;
 
 const BlogDescription = styled.span`
@@ -135,17 +134,6 @@ const TagContainer = styled.div`
     flex-wrap: nowrap;
   `};
 `;
-
-type TagSize =
-  | 'xs'
-  | 'sm'
-  | 'lg'
-  | 'xl'
-  | 'xl2'
-  | 'xl3'
-  | 'xl4'
-  | 'xl5'
-  | 'xl6';
 
 export const Tag = styled.span<{ tagColor: NotionColorsTypes; size: TagSize }>`
   width: fit-content;

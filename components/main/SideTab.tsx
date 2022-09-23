@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Tag } from '../../pages';
 import { media } from '../../styles/media';
+import { Tag as TagComponent } from './RenderPosts';
 import Tags from './Tags';
 
 type TagsProps = {
@@ -12,7 +13,10 @@ const SideTab: React.FC<TagsProps> = ({ tags }) => {
   return (
     <SideTabWrapper>
       <SideTapHeader>Tags</SideTapHeader>
-      <Tags tags={[{ color: 'gray', name: 'All', id: 'all' }]} />
+      <TagComponent tagColor="gray" size="sm">
+        All
+      </TagComponent>
+      {/* <Tags tags={[{ color: 'gray', name: 'All', id: 'all' }]} /> */}
       <Tags tags={tags} />
     </SideTabWrapper>
   );

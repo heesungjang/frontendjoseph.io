@@ -52,6 +52,7 @@ const SearchContainer = styled.div`
 `;
 
 const SearchInput = styled.input`
+  width: 170px;
   font-weight: ${(p) => p.theme.fontWeight.medium};
   font-size: ${(p) => p.theme.font.sm};
   color: ${(p) => p.theme.darkgray};

@@ -29,10 +29,10 @@ const Content: React.FC<ContentProps> = ({ posts, frontmatter, tags }) => {
           {/* Tags */}
           {/* <Tags tags={tags} /> */}
           {/* posts section (posts)*/}
-          <div style={{ position: 'relative' }}>
+          <SideTapContainer>
             <SideTab tags={tags} />
             <RenderPosts posts={posts} />
-          </div>
+          </SideTapContainer>
         </MainContents>
       </MainContentsContainer>
 
@@ -84,6 +84,10 @@ const Divider = styled.hr<{ mt: number }>`
   width: 100%;
   opacity: 0.2;
   margin-top: ${(p) => p.mt}px;
+`;
+
+const SideTapContainer = styled.div`
+  position: relative;
 `;
 
 export default Content;

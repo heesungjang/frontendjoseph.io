@@ -30,6 +30,17 @@ const fontWeight = {
   extrabold: 800,
 };
 
+export type TagSize =
+  | 'xs'
+  | 'sm'
+  | 'lg'
+  | 'xl'
+  | 'xl2'
+  | 'xl3'
+  | 'xl4'
+  | 'xl5'
+  | 'xl6';
+
 export type NotionColorsTypes =
   | 'default'
   | 'gray'
@@ -46,7 +57,7 @@ const notionColors = {
   gray: '#eae4e9',
   brown: '#fde4cf',
   orange: '#ffdab9',
-  yellow: '#fcf6bd',
+  yellow: '#faedcb',
   green: '#d0f4de',
   blue: '#a9def9',
   purple: '#e4c1f9',
