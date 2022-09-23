@@ -17,7 +17,7 @@ type PostProps = {
 const RenderPosts: React.FC<PostProps> = ({ posts }) => {
   const renderedPosts = posts.map((post) => {
     const tags = post.tags.map((tag) => (
-      <Tag key={tag.id} tagColor={tag.color}>
+      <Tag key={tag.id} tagColor={tag.color} size="xs">
         {tag.name}
       </Tag>
     ));
@@ -54,6 +54,7 @@ const PostWrapper = styled.a`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
   gap: 2rem;
   width: 100%;
   padding: 24px;
@@ -77,8 +78,8 @@ const PostInfoContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  justify-content: center;
+  gap: 1rem;
+  justify-content: flex-start;
 
   ${media.lessThan('md')`
     flex-direction:column;
@@ -106,8 +107,8 @@ const BlogDescription = styled.span`
 `;
 
 const BlogImageContainer = styled.div`
-  width: 465px;
-  height: 150px;
+  width: 555px;
+  height: 160px;
   position: relative;
   transition: all 0.2s;
 
@@ -125,7 +126,7 @@ const BlogImage = styled(Image)`
 const TagContainer = styled.div`
   display: flex;
   gap: 8px;
-  width: 80%;
+  width: 100%;
   flex-wrap: wrap;
   ${media.lessThan('md')`
     width:100%;
@@ -135,15 +136,27 @@ const TagContainer = styled.div`
   `};
 `;
 
-const Tag = styled.span<{ tagColor: NotionColorsTypes }>`
+type TagSize =
+  | 'xs'
+  | 'sm'
+  | 'lg'
+  | 'xl'
+  | 'xl2'
+  | 'xl3'
+  | 'xl4'
+  | 'xl5'
+  | 'xl6';
+
+export const Tag = styled.span<{ tagColor: NotionColorsTypes; size: TagSize }>`
+  width: fit-content;
   padding: 3px 5px;
-  text-align: center;
   border-radius: 3px;
-  font-size: ${(p) => p.theme.font.xs};
+  font-size: ${(p) => p.theme.font[p.size]};
   font-weight: ${(p) => p.theme.fontWeight.normal};
   color: ${(p) => p.theme.black};
   background-color: ${(p) => p.theme.notionColors[p.tagColor]};
   opacity: 0.9;
+  cursor: pointer;
 `;
 
 export default RenderPosts;

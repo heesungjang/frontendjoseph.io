@@ -6,17 +6,19 @@ import { media } from '../../styles/media';
 import Footer from '../shared/Footer';
 import Description from './Description';
 import RenderPosts from './RenderPosts';
-import { Frontmatter, Post } from '../../pages';
+import { Frontmatter, Post, Tag } from '../../pages';
 
 // packages
 import styled from 'styled-components';
+import SideTab from './SideTab';
 
 type ContentProps = {
   posts: Post[];
+  tags: Tag[];
   frontmatter: Frontmatter;
 };
 
-const Content: React.FC<ContentProps> = ({ posts, frontmatter }) => {
+const Content: React.FC<ContentProps> = ({ posts, frontmatter, tags }) => {
   return (
     <ContentWrapper>
       <MainContentsContainer>
@@ -24,9 +26,13 @@ const Content: React.FC<ContentProps> = ({ posts, frontmatter }) => {
           {/* top section (description)*/}
           <Description frontmatter={frontmatter} />
           <Divider mt={36} />
-
+          {/* Tags */}
+          {/* <Tags tags={tags} /> */}
           {/* posts section (posts)*/}
-          <RenderPosts posts={posts} />
+          <div style={{ position: 'relative' }}>
+            <SideTab tags={tags} />
+            <RenderPosts posts={posts} />
+          </div>
         </MainContents>
       </MainContentsContainer>
 
@@ -39,6 +45,7 @@ const Content: React.FC<ContentProps> = ({ posts, frontmatter }) => {
 };
 
 const ContentWrapper = styled.div`
+  position: 'relative';
   display: flex;
   flex-direction: column;
   height: 100%;

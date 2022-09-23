@@ -34,14 +34,15 @@ export interface Frontmatter {
 
 type MainProps = {
   posts: Post[];
+  tags: Tag[];
   frontmatter: Frontmatter;
 };
 
-const Main: NextPage<MainProps> = ({ posts, frontmatter }) => {
+const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
   return (
     <MainWrapper>
       <Header />
-      <Content posts={posts} frontmatter={frontmatter} />
+      <Content posts={posts} frontmatter={frontmatter} tags={tags} />
     </MainWrapper>
   );
 };
@@ -59,12 +60,13 @@ export default Main;
 // SSG
 export const getStaticProps = async () => {
   if (databaseId) {
-    const posts = await fetchPosts(databaseId);
+    const { tags, posts } = await fetchPosts(databaseId);
     const frontmatter = await fetchFrontMatter(databaseId);
 
     return {
       props: {
         posts,
+        tags,
         frontmatter: {
           title: frontmatter?.title[0].plain_text,
           description: frontmatter?.description[0].plain_text,
