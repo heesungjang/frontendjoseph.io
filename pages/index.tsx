@@ -10,6 +10,7 @@ import { fetchPosts, fetchFrontMatter } from '../lib/notions';
 // packages
 import styled from 'styled-components';
 
+import { motion } from 'framer-motion';
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export interface Tag {
@@ -40,13 +41,13 @@ type MainProps = {
 
 const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
   return (
-    <MainWrapper>
+    <MainWrapper exit={{ opacity: 0 }}>
       <Content posts={posts} frontmatter={frontmatter} tags={tags} />
     </MainWrapper>
   );
 };
 
-const MainWrapper = styled.div`
+const MainWrapper = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;
