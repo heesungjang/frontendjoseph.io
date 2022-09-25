@@ -25,7 +25,8 @@ const Content: React.FC<ContentProps> = ({ posts, frontmatter, tags }) => {
         <MainContents>
           {/* top section (description)*/}
           <Description frontmatter={frontmatter} />
-          <Divider mt={36} />
+
+          <Divider mt={45} w="200px" mb="30px" />
           {/* Tags */}
           {/* <Tags tags={tags} /> */}
           {/* posts section (posts)*/}
@@ -79,10 +80,11 @@ export const EmptySpaceHolder = styled.div`
   flex: 1 1 auto;
 `;
 
-export const Divider = styled.hr<{ mt: number }>`
-  width: 100%;
+export const Divider = styled.hr<{ mt: number; w?: string; mb?: string }>`
+  width: ${(p) => (p.w ? p.w : '100%')};
   opacity: 0.2;
   margin-top: ${(p) => p.mt}px;
+  margin-bottom: ${(p) => (p.mb ? p.mb : null)};
 `;
 
 const SideTapContainer = styled.div`

@@ -94,6 +94,7 @@ const PostInfoContainer = styled.div`
 `;
 
 const BlogTitle = styled.h2`
+  line-height: 1.2;
   font-size: ${(p) => p.theme.font.xl2};
   font-weight: ${(p) => p.theme.fontWeight.medium};
   :hover {

@@ -48,7 +48,7 @@ const Transition: React.FC<{
   const { asPath } = useRouter();
 
   return (
-    <AnimatePresence initial={false} exitBeforeEnter>
+    <AnimatePresence initial={false} mode="wait">
       <motion.div
         key={asPath}
         variants={variants}

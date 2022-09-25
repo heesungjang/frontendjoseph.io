@@ -10,6 +10,7 @@ import { Divider, EmptySpaceHolder } from '../components/main/Content';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { media } from '../styles/media';
+import { useScroll, motion } from 'framer-motion';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -25,6 +26,7 @@ export const Text = ({ text }) => {
 
     return (
       <TextSpan
+        key={value.id}
         styles={{ bold, code, color, italic, strikethrough, underline }}
       >
         {text.link ? (
@@ -169,12 +171,25 @@ const renderBlock = (block) => {
 };
 
 export default function Post({ page, blocks }) {
-  console.log(page);
+  const { scrollYProgress } = useScroll();
+
   if (!page || !blocks) {
     return <div />;
   }
   return (
     <PostWrapper>
+      <motion.div
+        style={{
+          scaleX: scrollYProgress,
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '10px',
+          background: 'red',
+          transformOrigin: '0%',
+        }}
+      />
       <Head>
         <title>{page.properties.Name.title[0].plain_text}</title>
         <link rel="icon" href="/favicon.ico" />

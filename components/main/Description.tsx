@@ -41,7 +41,7 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
 
           {slug.linkedIn && (
             <Link href={slug.linkedIn}>
-              <a rel="noopener noreferrer">
+              <a rel="noopener noreferrer" style={{ opacity: 0.856 }}>
                 <Linkedin width={25} height={25} />
               </a>
             </Link>
@@ -103,4 +103,5 @@ const SlugContainer = styled.div`
   gap: 15px;
   opacity: 0.8;
 `;
+
 export default Description;

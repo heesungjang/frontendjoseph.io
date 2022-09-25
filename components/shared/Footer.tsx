@@ -20,7 +20,7 @@ const FooterWrapper = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
+  margin: 60px 0;
 `;
 
 const FooterText = styled.span`

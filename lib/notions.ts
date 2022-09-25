@@ -108,7 +108,7 @@ export const fetchBlocks = async (blockId: string) => {
     }
     cursor = next_cursor;
   }
-  console.log(blocks);
+
   return blocks;
 };
 
