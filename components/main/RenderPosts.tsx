@@ -9,6 +9,7 @@ import { NotionColorsTypes, TagSize } from '../../styles/theme';
 // packages
 import styled from 'styled-components';
 import { media } from '../../styles/media';
+import Link from 'next/link';
 
 type PostProps = {
   posts: Post[];
@@ -24,23 +25,25 @@ const RenderPosts: React.FC<PostProps> = ({ posts }) => {
 
     if (!post.isHidden) {
       return (
-        <PostWrapper key={post.id}>
-          <BlogImageContainer>
-            <BlogImage
-              loader={({ src }) => src}
-              src={post.cover}
-              alt="cover-image"
-              layout="fill"
-              unoptimized={true}
-              priority={true}
-            />
-          </BlogImageContainer>
-          <PostInfoContainer>
-            <BlogTitle>{post.title}</BlogTitle>
-            <BlogDescription>{post.description}</BlogDescription>
-            <TagContainer>{[...tags]}</TagContainer>
-          </PostInfoContainer>
-        </PostWrapper>
+        <Link href={`/${post.id}`} key={post.id}>
+          <PostWrapper>
+            <BlogImageContainer>
+              <BlogImage
+                loader={({ src }) => src}
+                src={post.cover}
+                alt="cover-image"
+                layout="fill"
+                unoptimized={true}
+                priority={true}
+              />
+            </BlogImageContainer>
+            <PostInfoContainer>
+              <BlogTitle>{post.title}</BlogTitle>
+              <BlogDescription>{post.description}</BlogDescription>
+              <TagContainer>{[...tags]}</TagContainer>
+            </PostInfoContainer>
+          </PostWrapper>
+        </Link>
       );
     }
   });
@@ -49,6 +52,8 @@ const RenderPosts: React.FC<PostProps> = ({ posts }) => {
 };
 
 const PostWrapper = styled.a`
+  text-decoration: none;
+  color: inherit;
   box-sizing: border-box;
   cursor: pointer;
   display: flex;

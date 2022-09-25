@@ -36,10 +36,9 @@ const Content: React.FC<ContentProps> = ({ posts, frontmatter, tags }) => {
         </MainContents>
       </MainContentsContainer>
 
-      {/* footer + space holder  */}
+      {/*space holder */}
       <EmptySpaceHolder></EmptySpaceHolder>
       <Divider mt={80} />
-      <Footer />
     </ContentWrapper>
   );
 };
@@ -76,7 +75,7 @@ const MainContents = styled.div`
   width: 100%;
 `;
 
-const EmptySpaceHolder = styled.div`
+export const EmptySpaceHolder = styled.div`
   flex: 1 1 auto;
 `;
 

@@ -17,17 +17,10 @@ const Footer: React.FC = () => {
 
 const FooterWrapper = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
+  align-items: center;
   margin: 40px 0;
-
-  ${media.greaterThan('md')`
-  width: 620px;
-  
-  `};
-
-  ${media.greaterThan('lg')`
-  width: 720px;
-  `};
 `;
 
 const FooterText = styled.span`

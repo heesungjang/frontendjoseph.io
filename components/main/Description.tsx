@@ -36,7 +36,6 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
           </IconWrapper>
         </SearchContainer>
       </div>
-
       {/* three js  image */}
       <ThreeDContainer>
         <Dog />
@@ -50,6 +49,7 @@ const ThreeDContainer = styled.div`
   height: 230px;
   position: relative;
   display: flex;
+
   justify-content: center;
 `;
 

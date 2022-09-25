@@ -76,7 +76,7 @@ const ThreeDog: React.FC = () => {
       controls.target = target;
       setControls(controls);
 
-      loadGLTFModel(scene, '/assets/dog.gltf', {
+      loadGLTFModel(scene, '/voxel_dog/scene.gltf', {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {
@@ -109,7 +109,6 @@ const ThreeDog: React.FC = () => {
       };
 
       return () => {
-        console.log('unmount');
         cancelAnimationFrame(req);
         renderer.dispose();
       };
@@ -128,8 +127,8 @@ const ThreeDog: React.FC = () => {
 
 const DogModel = styled.div`
   position: absolute;
-  top: 5px;
-  right: 15px;
+  top: 50px;
+  right: 10px;
   height: 100%;
   width: 100%;
   cursor: pointer;

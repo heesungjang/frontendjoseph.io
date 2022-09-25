@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.0",
+    "@types/react-syntax-highlighter": "^15.5.5",
     "@types/styled-components": "^5.1.26",
     "@types/three": "^0.144.0",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
@@ -20,6 +21,7 @@
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-syntax-highlighter": "^15.5.0",
     "styled-components": "^5.3.5",
     "styled-media-query": "^2.1.2",
     "styled-reset": "^4.4.2",

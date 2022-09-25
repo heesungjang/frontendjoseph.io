@@ -9,6 +9,7 @@ import { fetchPosts, fetchFrontMatter } from '../lib/notions';
 
 // packages
 import styled from 'styled-components';
+import Head from 'next/head';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -41,7 +42,12 @@ type MainProps = {
 const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
   return (
     <MainWrapper>
-      <Header />
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <Content posts={posts} frontmatter={frontmatter} tags={tags} />
     </MainWrapper>
   );
