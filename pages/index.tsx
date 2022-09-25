@@ -2,14 +2,13 @@
 import type { NextPage } from 'next';
 
 // lib & components & styles
-import Header from '../components/shared/Header';
+
 import Content from '../components/main/Content';
 import { NotionColorsTypes } from '../styles/theme';
 import { fetchPosts, fetchFrontMatter } from '../lib/notions';
 
 // packages
 import styled from 'styled-components';
-import Head from 'next/head';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -42,12 +41,6 @@ type MainProps = {
 const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
   return (
     <MainWrapper>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
       <Content posts={posts} frontmatter={frontmatter} tags={tags} />
     </MainWrapper>
   );

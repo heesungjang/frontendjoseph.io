@@ -79,7 +79,7 @@ export const EmptySpaceHolder = styled.div`
   flex: 1 1 auto;
 `;
 
-const Divider = styled.hr<{ mt: number }>`
+export const Divider = styled.hr<{ mt: number }>`
   width: 100%;
   opacity: 0.2;
   margin-top: ${(p) => p.mt}px;

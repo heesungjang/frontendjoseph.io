@@ -122,7 +122,7 @@ const ThreeDog: React.FC = () => {
     };
   }, [renderer, handleWindowResize]);
 
-  return <DogModel ref={refBody}>{loading && <p>loading...</p>}</DogModel>;
+  return <DogModel ref={refBody}>{loading && null}</DogModel>;
 };
 
 const DogModel = styled.div`

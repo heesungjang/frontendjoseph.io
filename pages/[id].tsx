@@ -5,10 +5,11 @@ import Link from 'next/link';
 
 import styles from './post.module.css';
 import styled from 'styled-components';
-import { EmptySpaceHolder } from '../components/main/Content';
+import { Divider, EmptySpaceHolder } from '../components/main/Content';
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { media } from '../styles/media';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -114,7 +115,11 @@ const renderBlock = (block) => {
       const caption = value.caption ? value.caption[0]?.plain_text : '';
       return (
         <figure>
-          <img src={src} alt={caption} />
+          <img
+            src={src}
+            alt={caption}
+            style={{ width: '100%', height: 'auto' }}
+          />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );
@@ -164,6 +169,7 @@ const renderBlock = (block) => {
 };
 
 export default function Post({ page, blocks }) {
+  console.log(page);
   if (!page || !blocks) {
     return <div />;
   }
@@ -174,19 +180,28 @@ export default function Post({ page, blocks }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <article className={styles.container}>
+      <ArticleWrapper>
         <Link href="/">
           <GoBack>← Go Back</GoBack>
         </Link>
         <H1>
           <Text text={page.properties.Name.title} />
         </H1>
+        <Created>
+          Author:
+          {page.properties?.Authors?.people[0]?.name
+            ? ' ' + page.properties?.Authors?.people[0]?.name
+            : ' unknown'}
+        </Created>
+        <Created>{page.created_time.slice(0, 10)}</Created>
+
+        <Divider mt={20} />
         <section>
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
         </section>
-      </article>
+      </ArticleWrapper>
       <EmptySpaceHolder style={{ marginBottom: '50px' }} />
     </PostWrapper>
   );
@@ -238,13 +253,32 @@ export const getStaticProps = async (context) => {
 
 const PostWrapper = styled.div`
   display: flex;
-  align-items: stretch;
+  align-items: center;
   flex-direction: column;
+  justify-content: stretch;
   height: 100%;
   min-height: 100vh;
+  width: 100%;
 `;
+
+const ArticleWrapper = styled.article`
+  width: calc(100% - 40px);
+  line-height: 1.5;
+  ${media.greaterThan('md')`
+  width: 620px;
+  margin: 0 40px;
+  
+  `};
+
+  ${media.greaterThan('lg')`
+  width: 720px;
+  margin: 0 40px;
+  
+  `};
+`;
+
 const TextSpan = styled.span`
-  font-size: ${(p) => (p.styles.code ? '16px' : '18px')};
+  font-size: ${(p) => (p.styles.code ? '14px' : '16px')};
   color: ${({ theme, styles: { color, code } }) =>
     code
       ? '#EB1D36'
@@ -295,6 +329,7 @@ const H3 = styled.h3`
 `;
 
 const Paragraph = styled.div`
+  text-align: justify;
   margin-top: 16px;
 `;
 
@@ -323,25 +358,19 @@ const GoBack = styled.a`
   color: ${(p) => p.theme.gray};
   font-weight: ${(p) => p.theme.fontWeight.semibold};
   opacity: 0.8;
-  margin-top: 50px;
+  margin-top: 30px;
   cursor: pointer;
 `;
 
 const BlockQuote = styled.blockquote`
+  color: ${({ theme }) => theme.darkgray};
+  line-height: 2;
   border-left: 5px solid black;
   padding-left: 15px;
 `;
 
-const CodeBlock = styled.pre`
-  padding: 20px;
-  font-family: monospace;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const Code = styled.code`
-  font-family: monospace;
-  background-color: rgb(242, 242, 242);
-  padding: 2px 4px;
-  border-radius: 2px;
+const Created = styled.div`
+  color: ${({ theme }) => theme.gray};
+  font-size: ${(p) => p.theme.font.sm};
+  font-weight: ${(p) => p.theme.fontWeight.normal};
 `;

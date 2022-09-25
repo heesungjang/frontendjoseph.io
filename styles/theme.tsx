@@ -71,7 +71,7 @@ export const light = {
   notionColors,
   bg: '#FFFFFF',
   white: '#F5F5F5',
-  black: '#262626',
+  black: '#404040',
   gray: '#79797A',
   darkgray: '#404040',
 };

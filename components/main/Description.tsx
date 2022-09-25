@@ -8,6 +8,11 @@ import { Frontmatter } from '../../pages';
 // packages
 import styled from 'styled-components';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import { slug } from '../../slug';
+import GithubIcon from '../../public/assets/github.svg';
+import EmailIcon from '../../public/assets/email.svg';
+import Linkedin from '../../public/assets/linkedin.svg';
 
 type DescriptionProps = {
   frontmatter: Frontmatter;
@@ -15,7 +20,7 @@ type DescriptionProps = {
 
 const Dog = dynamic(() => import('../main/Dog'), {
   ssr: false,
-  loading: () => <div>loading...</div>,
+  loading: () => null,
 });
 
 const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
@@ -24,17 +29,32 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
       <div>
         <Title>{frontmatter.title}</Title>
         <DescriptionText>{frontmatter.description}</DescriptionText>
-        <SearchContainer>
-          <SearchInput placeholder="Search posts..." />
-          <IconWrapper>
-            <Image
-              src="/assets/search_icon.png"
-              alt="search-box"
-              width={15}
-              height={15}
-            />
-          </IconWrapper>
-        </SearchContainer>
+
+        <SlugContainer>
+          {slug.gitHub && (
+            <Link href={slug.gitHub}>
+              <a target="_blank" rel="noopener noreferrer">
+                <GithubIcon width={25} height={25} />
+              </a>
+            </Link>
+          )}
+
+          {slug.linkedIn && (
+            <Link href={slug.linkedIn}>
+              <a rel="noopener noreferrer">
+                <Linkedin width={25} height={25} />
+              </a>
+            </Link>
+          )}
+
+          {slug.email && (
+            <Link href={`mailto:${slug.email}`}>
+              <a rel="noopener noreferrer">
+                <EmailIcon width={25} height={25} />
+              </a>
+            </Link>
+          )}
+        </SlugContainer>
       </div>
       {/* three js  image */}
       <ThreeDContainer>
@@ -56,6 +76,7 @@ const ThreeDContainer = styled.div`
 const DescriptionWrapper = styled.div`
   display: flex;
   position: relative;
+  overflow: hidden;
   align-items: flex-end;
   justify-content: space-between;
   div {
@@ -69,46 +90,17 @@ const Title = styled.h1`
   font-size: ${(p) => p.theme.font.xl5};
 `;
 
-const SearchContainer = styled.div`
-  position: relative;
-  margin-top: 24px;
-  display: flex;
-  align-items: center;
-`;
-
-const SearchInput = styled.input`
-  width: 170px;
-  font-weight: ${(p) => p.theme.fontWeight.medium};
-  font-size: ${(p) => p.theme.font.sm};
-  color: ${(p) => p.theme.darkgray};
-  background-color: #f7f6f7;
-  border: none;
-  height: 36px;
-  border-radius: 6px;
-  opacity: 0.8;
-  :focus {
-    outline: none;
-    box-shadow: 0 0 4px #c5c4c4;
-    ::placeholder {
-      color: ${(p) => p.theme.darkgray};
-    }
-  }
-  transition: all 0.2s;
-  padding-left: 32px;
-  padding-right: 3px;
-`;
-
 const DescriptionText = styled.div`
   white-space: pre-wrap;
   line-height: 1.625;
   margin-top: 24px;
 `;
 
-const IconWrapper = styled.div`
-  position: absolute;
-  left: 0;
-  margin-top: 2;
-  padding-left: 8px;
-  opacity: 0.5;
+const SlugContainer = styled.div`
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  opacity: 0.8;
 `;
 export default Description;
