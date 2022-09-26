@@ -27,16 +27,6 @@ const RenderPosts: React.FC<PostProps> = ({ posts }) => {
       return (
         <Link href={`/${post.id}`} key={post.id}>
           <PostWrapper>
-            {/* <BlogImageContainer>
-              <BlogImage
-                loader={({ src }) => src}
-                src={post.cover}
-                alt="cover-image"
-                layout="fill"
-                unoptimized={true}
-                priority={true}
-              />
-            </BlogImageContainer> */}
             <PostInfoContainer>
               <BlogTitle>{post.title}</BlogTitle>
               <BlogDescription>{post.description}</BlogDescription>
@@ -63,17 +53,15 @@ const PostWrapper = styled.a`
   gap: 2rem;
   width: 100%;
   border-radius: 8px;
-  padding: 24px;
+  /* padding: 24px; */
   :hover {
-    background-color: #f5f4f5;
+    h2 {
+      text-decoration-line: underline;
+      text-decoration-color: ${(p) => p.theme.gray};
+    }
   }
   transition: all 0.2s linear;
-
-  /* ${media.lessThan('md')`
-    flex-direction:column;
-    align-items: center;
-    gap: 1rem;
-  `}; */
+  margin-bottom: 50px;
 `;
 
 const PostInfoContainer = styled.div`
@@ -82,22 +70,13 @@ const PostInfoContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   justify-content: flex-start;
-  /* 
-  ${media.lessThan('md')`
-    flex-direction:column;
-    align-items: f;
-    gap: 1rem;
-  `}; */
 `;
 
 const BlogTitle = styled.h2`
   line-height: 1.2;
   font-size: ${(p) => p.theme.font.xl2};
   font-weight: ${(p) => p.theme.fontWeight.medium};
-  :hover {
-    text-decoration-line: underline;
-    text-decoration-color: ${(p) => p.theme.gray};
-  }
+
   width: fit-content;
 `;
 
