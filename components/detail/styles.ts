@@ -131,10 +131,12 @@ export const BlockQuote = styled.blockquote`
 `;
 
 export const Created = styled.div`
+  margin-top: 10px;
   text-transform: uppercase;
   color: ${({ theme }) => theme.gray};
   font-size: ${(p) => p.theme.font.xs};
   font-weight: ${(p) => p.theme.fontWeight.medium};
+  opacity: 0.8;
 `;
 
 export const ProgressBar = styled(motion.div)`
