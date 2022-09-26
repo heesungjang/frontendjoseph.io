@@ -112,7 +112,7 @@ export const fetchBlocks = async (blockId: string) => {
   return blocks;
 };
 
-export const fetchDatabase = async (databaseId) => {
+export const fetchDatabase = async (databaseId: string) => {
   const response = await notion.databases.query({
     database_id: databaseId,
   });
