@@ -3,7 +3,6 @@ import React from 'react';
 
 // components & pages & styles
 import { media } from '../../styles/media';
-import Footer from '../shared/Footer';
 import Description from './Description';
 import RenderPosts from './RenderPosts';
 import { Frontmatter, Post, Tag } from '../../pages';
@@ -25,10 +24,7 @@ const Content: React.FC<ContentProps> = ({ posts, frontmatter, tags }) => {
         <MainContents>
           {/* top section (description)*/}
           <Description frontmatter={frontmatter} />
-
-          <Divider mt={45} w="200px" mb="30px" />
-          {/* Tags */}
-          {/* <Tags tags={tags} /> */}
+          <Divider mt={45} mb="30px" />
           {/* posts section (posts)*/}
           <SideTapContainer>
             <SideTab tags={tags} />
@@ -39,7 +35,7 @@ const Content: React.FC<ContentProps> = ({ posts, frontmatter, tags }) => {
 
       {/*space holder */}
       <EmptySpaceHolder></EmptySpaceHolder>
-      <Divider mt={80} w="200px" />
+      <Divider mt={80} />
     </ContentWrapper>
   );
 };

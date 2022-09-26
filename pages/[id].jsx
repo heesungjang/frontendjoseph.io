@@ -49,7 +49,6 @@ export default function Post({ page, blocks }) {
           <Text text={page.properties.Name.title} />
         </H1>
         <Created>
-          Author:
           {page.properties?.Authors?.people[0]?.name
             ? ' ' + page.properties?.Authors?.people[0]?.name
             : ' unknown'}

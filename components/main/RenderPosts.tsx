@@ -27,7 +27,7 @@ const RenderPosts: React.FC<PostProps> = ({ posts }) => {
       return (
         <Link href={`/${post.id}`} key={post.id}>
           <PostWrapper>
-            <BlogImageContainer>
+            {/* <BlogImageContainer>
               <BlogImage
                 loader={({ src }) => src}
                 src={post.cover}
@@ -36,7 +36,7 @@ const RenderPosts: React.FC<PostProps> = ({ posts }) => {
                 unoptimized={true}
                 priority={true}
               />
-            </BlogImageContainer>
+            </BlogImageContainer> */}
             <PostInfoContainer>
               <BlogTitle>{post.title}</BlogTitle>
               <BlogDescription>{post.description}</BlogDescription>
@@ -62,21 +62,18 @@ const PostWrapper = styled.a`
   align-items: center;
   gap: 2rem;
   width: 100%;
-  padding: 24px;
   border-radius: 8px;
+  padding: 24px;
   :hover {
     background-color: #f5f4f5;
-    div:first-child {
-      transform: scale(1.05);
-    }
   }
   transition: all 0.2s linear;
 
-  ${media.lessThan('md')`
+  /* ${media.lessThan('md')`
     flex-direction:column;
     align-items: center;
     gap: 1rem;
-  `};
+  `}; */
 `;
 
 const PostInfoContainer = styled.div`
@@ -85,12 +82,12 @@ const PostInfoContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   justify-content: flex-start;
-
+  /* 
   ${media.lessThan('md')`
     flex-direction:column;
-    align-items: center;
+    align-items: f;
     gap: 1rem;
-  `};
+  `}; */
 `;
 
 const BlogTitle = styled.h2`
@@ -133,12 +130,12 @@ const TagContainer = styled.div`
   gap: 8px;
   width: 100%;
   flex-wrap: wrap;
-  ${media.lessThan('md')`
+  /* ${media.lessThan('md')`
     width:100%;
     flex-direction:row;
     justify-content: center;
     flex-wrap: nowrap;
-  `};
+  `}; */
 `;
 
 export const Tag = styled.span<{ tagColor: NotionColorsTypes; size: TagSize }>`

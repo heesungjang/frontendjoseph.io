@@ -131,9 +131,10 @@ export const BlockQuote = styled.blockquote`
 `;
 
 export const Created = styled.div`
+  text-transform: uppercase;
   color: ${({ theme }) => theme.gray};
-  font-size: ${(p) => p.theme.font.sm};
-  font-weight: ${(p) => p.theme.fontWeight.normal};
+  font-size: ${(p) => p.theme.font.xs};
+  font-weight: ${(p) => p.theme.fontWeight.medium};
 `;
 
 export const ProgressBar = styled(motion.div)`

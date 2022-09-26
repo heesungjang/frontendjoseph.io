@@ -20,7 +20,7 @@ export const Text = ({ text }) => {
   if (!text) {
     return null;
   }
-  return text.map((value) => {
+  return text.map((value, idx) => {
     const {
       annotations: { bold, code, color, italic, strikethrough, underline },
       text,
@@ -28,7 +28,7 @@ export const Text = ({ text }) => {
 
     return (
       <TextSpan
-        key={value.id}
+        key={idx}
         styles={{ bold, code, color, italic, strikethrough, underline }}
       >
         {text.link ? (
