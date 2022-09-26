@@ -96,7 +96,6 @@ export const getStaticProps = async (context) => {
       })
   );
   const blocksWithChildren = blocks.map((block) => {
-    console.log(block);
     if (
       isFullBlock(block) &&
       block.has_children &&

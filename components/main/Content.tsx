@@ -39,7 +39,7 @@ const Content: React.FC<ContentProps> = ({ posts, frontmatter, tags }) => {
 
       {/*space holder */}
       <EmptySpaceHolder></EmptySpaceHolder>
-      <Divider mt={80} />
+      <Divider mt={80} w="200px" />
     </ContentWrapper>
   );
 };
