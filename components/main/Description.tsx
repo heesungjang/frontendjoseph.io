@@ -34,7 +34,7 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
           {slug.gitHub && (
             <Link href={slug.gitHub}>
               <a target="_blank" rel="noopener noreferrer">
-                <GithubIcon width={25} height={25} />
+                <GithubIcon width={20} height={20} />
               </a>
             </Link>
           )}
@@ -42,7 +42,7 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
           {slug.linkedIn && (
             <Link href={slug.linkedIn}>
               <a rel="noopener noreferrer" style={{ opacity: 0.856 }}>
-                <Linkedin width={25} height={25} />
+                <Linkedin width={20} height={20} />
               </a>
             </Link>
           )}
@@ -50,7 +50,7 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
           {slug.email && (
             <Link href={`mailto:${slug.email}`}>
               <a rel="noopener noreferrer">
-                <EmailIcon width={25} height={25} />
+                <EmailIcon width={20} height={20} />
               </a>
             </Link>
           )}
