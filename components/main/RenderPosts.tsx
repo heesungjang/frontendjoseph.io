@@ -41,7 +41,7 @@ const RenderPosts: React.FC<PostProps> = ({ posts }) => {
   return <>{[...renderedPosts]}</>;
 };
 
-const PostWrapper = styled.a`
+const PostWrapper = styled.div`
   text-decoration: none;
   color: inherit;
   box-sizing: border-box;
