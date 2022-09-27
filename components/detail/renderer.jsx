@@ -15,6 +15,7 @@ import { Fragment } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Link from 'next/link';
+import { FontStyles } from '../../styles/GlobalStyle';
 
 export const Text = ({ text }) => {
   if (!text) {
@@ -137,7 +138,11 @@ export const renderBlock = (block) => {
       );
     case 'code':
       return (
-        <SyntaxHighlighter language={value.language} style={dracula}>
+        <SyntaxHighlighter
+          language={value.language}
+          style={dracula}
+          customStyle={{ lineHeight: '0.75', fontSize: '13px' }}
+        >
           {value.rich_text[0].plain_text}
         </SyntaxHighlighter>
       );
