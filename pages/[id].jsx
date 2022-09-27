@@ -23,6 +23,7 @@ import { isFullBlock } from '@notionhq/client';
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Post({ page, blocks }) {
+  console.log(page);
   const { scrollYProgress } = useScroll();
 
   if (!page || !blocks) {
@@ -53,7 +54,7 @@ export default function Post({ page, blocks }) {
             ? ' ' + page.properties?.Authors?.people[0]?.name
             : ' unknown'}
         </Created>
-        <Created>{page.created_time.slice(0, 10)}</Created>
+        <Created>{page.properties.Date.date?.start.slice(0, 10)}</Created>
 
         <Divider mt={20} />
         <section>
