@@ -115,6 +115,7 @@ export const List = styled.li`
 
 export const GoBack = styled.a`
   display: block;
+  width: fit-content;
   font-size: ${(p) => p.theme.font.xl};
   color: ${(p) => p.theme.gray};
   font-weight: ${(p) => p.theme.fontWeight.semibold};
