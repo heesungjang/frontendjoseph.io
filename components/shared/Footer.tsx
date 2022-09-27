@@ -1,9 +1,6 @@
 // React & Next
 import React from 'react';
 
-// styles
-import { media } from '../../styles/media';
-
 // packages
 import styled from 'styled-components';
 

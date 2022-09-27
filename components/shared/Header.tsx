@@ -3,9 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 
 // assets
-import { slug } from '../../slug';
 import { media } from '../../styles/media';
-import GithubIcon from '../../public/assets/github.svg';
 
 // hooks
 import useScrollPosition from '../../hooks/useScrollPosition';

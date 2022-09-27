@@ -8,13 +8,17 @@ import {
   ArticleWrapper,
   Created,
   GoBack,
-  H1,
   H1Title,
   PostWrapper,
   ProgressBar,
 } from '../components/detail/styles';
 import { renderBlock, Text } from '../components/detail/renderer';
-import { fetchPage, fetchBlocks, fetchDatabase } from '../lib/notions';
+import {
+  fetchPage,
+  fetchBlocks,
+  fetchDatabase,
+  fetchFrontMatter,
+} from '../lib/notions';
 import { Divider, EmptySpaceHolder } from '../components/main/Content';
 
 // packages
@@ -23,8 +27,7 @@ import { isFullBlock } from '@notionhq/client';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
-export default function Post({ page, blocks }) {
-  console.log(page);
+export default function Post({ page, blocks, frontmatter }) {
   const { scrollYProgress } = useScroll();
 
   if (!page || !blocks) {
@@ -39,7 +42,7 @@ export default function Post({ page, blocks }) {
         }}
       />
       <Head>
-        <title>{page.properties.Name.title[0].plain_text}</title>
+        <title>{`${frontmatter.title[0].text.content} | ${page.properties.Name.title[0].plain_text}`}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -81,6 +84,7 @@ export const getStaticProps = async (context) => {
   const { id } = context.params;
   const page = await fetchPage(id);
   const blocks = await fetchBlocks(id);
+  const frontmatter = await fetchFrontMatter(databaseId);
 
   const childBlocks = await Promise.all(
     blocks
@@ -113,6 +117,7 @@ export const getStaticProps = async (context) => {
     props: {
       page,
       blocks: blocksWithChildren,
+      frontmatter: frontmatter,
     },
     revalidate: 1,
   };

@@ -11,6 +11,7 @@ import { fetchPosts, fetchFrontMatter } from '../lib/notions';
 import styled from 'styled-components';
 
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export interface Tag {
@@ -42,6 +43,10 @@ type MainProps = {
 const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
   return (
     <MainWrapper exit={{ opacity: 0 }}>
+      <Head>
+        <title>{frontmatter.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Content posts={posts} frontmatter={frontmatter} tags={tags} />
     </MainWrapper>
   );

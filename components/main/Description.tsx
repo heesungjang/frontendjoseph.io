@@ -1,6 +1,5 @@
 // React & Next
 import React from 'react';
-import Image from 'next/image';
 
 // pages & components
 import { Frontmatter } from '../../pages';
@@ -34,7 +33,11 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
           {slug.gitHub && (
             <Link href={slug.gitHub}>
               <a target="_blank" rel="noopener noreferrer">
-                <GithubIcon width={20} height={20} />
+                <GithubIcon
+                  width={20}
+                  height={20}
+                  aria-label="github_link_icon"
+                />
               </a>
             </Link>
           )}
@@ -42,7 +45,11 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
           {slug.linkedIn && (
             <Link href={slug.linkedIn}>
               <a rel="noopener noreferrer" style={{ opacity: 0.856 }}>
-                <Linkedin width={20} height={20} />
+                <Linkedin
+                  width={20}
+                  height={20}
+                  aria-label="linkedin_link_icon"
+                />
               </a>
             </Link>
           )}
@@ -50,7 +57,11 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
           {slug.email && (
             <Link href={`mailto:${slug.email}`}>
               <a rel="noopener noreferrer">
-                <EmailIcon width={20} height={20} />
+                <EmailIcon
+                  width={20}
+                  height={20}
+                  aria-label="email_link_icon"
+                />
               </a>
             </Link>
           )}

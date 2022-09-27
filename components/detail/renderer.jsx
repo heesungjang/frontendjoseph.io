@@ -122,7 +122,7 @@ export const renderBlock = (block) => {
         <figure style={{ marginTop: '20px' }}>
           <img
             src={src}
-            alt={caption}
+            alt={caption ? caption : 'image'}
             style={{ width: '100%', height: 'auto' }}
           />
           {caption && <figcaption>{caption}</figcaption>}
