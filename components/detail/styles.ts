@@ -64,10 +64,17 @@ export const TextSpan = styled.span<{
 `;
 
 export const H1 = styled.h1`
+  margin-top: 32px;
   span {
     color: ${(p) => p.theme.darkgray};
-    font-size: ${(p) => p.theme.font.xl5};
+    font-size: ${(p) => p.theme.font.xl4};
     font-weight: ${(p) => p.theme.fontWeight.semibold};
+  }
+`;
+export const H1Title = styled(H1)`
+  margin-top: 0px;
+  span {
+    font-size: ${(p) => p.theme.font.xl5};
   }
 `;
 
@@ -75,7 +82,7 @@ export const H2 = styled.h2`
   margin-top: 32px;
   span {
     color: ${(p) => p.theme.darkgray};
-    font-size: ${(p) => p.theme.font.xl3};
+    font-size: ${(p) => p.theme.font.xl2};
     font-weight: ${(p) => p.theme.fontWeight.semibold};
   }
 `;
@@ -84,7 +91,7 @@ export const H3 = styled.h3`
   margin-top: 32px;
   span {
     color: ${(p) => p.theme.darkgray};
-    font-size: ${(p) => p.theme.font.xl2};
+    font-size: ${(p) => p.theme.font.xl};
     font-weight: ${(p) => p.theme.fontWeight.semibold};
   }
 `;

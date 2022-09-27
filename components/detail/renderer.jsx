@@ -118,7 +118,7 @@ export const renderBlock = (block) => {
         value.type === 'external' ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : '';
       return (
-        <figure>
+        <figure style={{ marginTop: '20px' }}>
           <img
             src={src}
             alt={caption}

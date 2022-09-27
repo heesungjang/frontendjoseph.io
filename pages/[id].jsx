@@ -9,6 +9,7 @@ import {
   Created,
   GoBack,
   H1,
+  H1Title,
   PostWrapper,
   ProgressBar,
 } from '../components/detail/styles';
@@ -46,9 +47,9 @@ export default function Post({ page, blocks }) {
         <Link href="/">
           <GoBack>← Go Back</GoBack>
         </Link>
-        <H1>
+        <H1Title>
           <Text text={page.properties.Name.title} />
-        </H1>
+        </H1Title>
         <Created>
           {page.properties?.Authors?.people[0]?.name
             ? ' ' + page.properties?.Authors?.people[0]?.name
