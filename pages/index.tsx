@@ -71,19 +71,21 @@ const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
   console.log(loading);
 
   return (
-    <MainWrapper exit={{ opacity: 0 }}>
+    <>
       {loading ? <ThreeDotsWave /> : null}
-      <Head>
-        <title>{frontmatter.title}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Content
-        posts={posts}
-        frontmatter={frontmatter}
-        tags={tags}
-        loading={loading}
-      />
-    </MainWrapper>
+      <MainWrapper exit={{ opacity: 0 }}>
+        <Head>
+          <title>{frontmatter.title}</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Content
+          posts={posts}
+          frontmatter={frontmatter}
+          tags={tags}
+          loading={loading}
+        />
+      </MainWrapper>
+    </>
   );
 };
 

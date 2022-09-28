@@ -5,7 +5,7 @@ const LoadingDot = {
   display: 'block',
   width: '2rem',
   height: '2rem',
-  backgroundColor: 'black',
+  backgroundColor: '#404040',
   borderRadius: '50%',
 };
 
@@ -48,17 +48,14 @@ export default function ThreeDotsWave() {
   return (
     <div
       style={{
-        position: 'absolute',
-        zIndex: 999,
-        top: '50%',
-        left: 0,
-        right: 'auto',
+        position: 'fixed',
+        top: -60,
         paddingTop: '5rem',
-        width: '100%',
+        width: '100vw',
+        height: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        opacity: 0.8,
       }}
     >
       <motion.div

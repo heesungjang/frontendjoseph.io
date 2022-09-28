@@ -10,6 +10,7 @@ import { Frontmatter, Post, Tag } from '../../pages';
 // packages
 import styled from 'styled-components';
 import SideTab from './SideTab';
+import ThreeDotsWave from '../shared/Loader';
 
 type ContentProps = {
   posts: Post[];
@@ -47,7 +48,7 @@ const Content: React.FC<ContentProps> = ({
 };
 
 const ContentWrapper = styled.div<{ loading: boolean }>`
-  opacity: ${(p) => (p.loading ? 0.2 : null)};
+  opacity: ${(p) => (p.loading ? 0.6 : null)};
   position: 'relative';
   display: flex;
   flex-direction: column;
