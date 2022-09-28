@@ -1,6 +1,5 @@
 // React & Next
 import React from 'react';
-import Image from 'next/image';
 
 // pages & components & styles
 import { Post } from '../../pages';
@@ -8,7 +7,7 @@ import { NotionColorsTypes, TagSize } from '../../styles/theme';
 
 // packages
 import styled from 'styled-components';
-import { media } from '../../styles/media';
+
 import Link from 'next/link';
 
 type PostProps = {
@@ -87,34 +86,11 @@ const BlogDescription = styled.span`
   line-height: 1.5;
 `;
 
-const BlogImageContainer = styled.div`
-  width: 555px;
-  height: 160px;
-  position: relative;
-  transition: all 0.2s;
-
-  ${media.lessThan('md')`
-    width:100%;
-    min-height: 220px;
-  `};
-`;
-
-const BlogImage = styled(Image)`
-  object-fit: cover;
-  border-radius: 7px;
-`;
-
 const TagContainer = styled.div`
   display: flex;
   gap: 8px;
   width: 100%;
   flex-wrap: wrap;
-  /* ${media.lessThan('md')`
-    width:100%;
-    flex-direction:row;
-    justify-content: center;
-    flex-wrap: nowrap;
-  `}; */
 `;
 
 export const Tag = styled.span<{ tagColor: NotionColorsTypes; size: TagSize }>`

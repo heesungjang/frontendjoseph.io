@@ -68,11 +68,8 @@ const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
     };
   }, []);
 
-  console.log(loading);
-
   return (
     <>
-      {loading ? <ThreeDotsWave /> : null}
       <MainWrapper exit={{ opacity: 0 }}>
         <Head>
           <title>{frontmatter.title}</title>

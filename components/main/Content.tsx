@@ -10,7 +10,6 @@ import { Frontmatter, Post, Tag } from '../../pages';
 // packages
 import styled from 'styled-components';
 import SideTab from './SideTab';
-import ThreeDotsWave from '../shared/Loader';
 
 type ContentProps = {
   posts: Post[];
