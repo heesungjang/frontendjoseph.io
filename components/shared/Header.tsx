@@ -23,7 +23,7 @@ const Header: React.FC = () => {
         </Link>
 
         <SearchContainer>
-          <SearchInput placeholder="Search posts..." />
+          <SearchInput placeholder="검색 기능은 구현중입니다..." />
           <IconWrapper>
             <Image
               src="/assets/search_icon.png"

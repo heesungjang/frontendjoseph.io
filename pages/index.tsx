@@ -49,11 +49,9 @@ const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
 
   useEffect(() => {
     const start = () => {
-      // NProgress.start();
       setLoading(true);
     };
     const end = () => {
-      // NProgress.done();
       setLoading(false);
     };
 

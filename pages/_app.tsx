@@ -8,10 +8,14 @@ import Footer from '../components/shared/Footer';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <GlobalStyle />
       <FontStyles />
       <ThemeProvider theme={theme}>

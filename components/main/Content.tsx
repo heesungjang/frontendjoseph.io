@@ -1,5 +1,5 @@
 // React & Next
-import React from 'react';
+import React, { useState } from 'react';
 
 // components & pages & styles
 import { media } from '../../styles/media';
@@ -21,21 +21,20 @@ type ContentProps = {
 const Content: React.FC<ContentProps> = ({
   posts,
   frontmatter,
-  tags,
+  // tags props will be used for tag filtering posts
+  // tags,
   loading,
 }) => {
   return (
-    <ContentWrapper loading={loading}>
+    <ContentWrapper loading={loading.toString()}>
       <MainContentsContainer>
         <MainContents>
           {/* top section (description)*/}
           <Description frontmatter={frontmatter} />
           <Divider mt={45} mb="30px" />
           {/* posts section (posts)*/}
-          <SideTapContainer>
-            <SideTab tags={tags} />
-            <RenderPosts posts={posts} />
-          </SideTapContainer>
+          <RenderPosts posts={posts} />
+          <SideTapContainer>{/* <SideTab tags={tags} /> */}</SideTapContainer>
         </MainContents>
       </MainContentsContainer>
 
@@ -46,8 +45,8 @@ const Content: React.FC<ContentProps> = ({
   );
 };
 
-const ContentWrapper = styled.div<{ loading: boolean }>`
-  opacity: ${(p) => (p.loading ? 0.6 : null)};
+const ContentWrapper = styled.div<{ loading: string }>`
+  opacity: ${(p) => (p.loading === 'true' ? 0.6 : undefined)};
   position: 'relative';
   display: flex;
   flex-direction: column;

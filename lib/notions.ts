@@ -46,7 +46,9 @@ export const fetchPosts = async (databaseId: string) => {
     } else {
       if (
         page.properties.Tags.type === 'multi_select' &&
-        page.properties.Tags.multi_select
+        page.properties.Tags.multi_select &&
+        page.properties.hidden.type === 'checkbox' &&
+        !page.properties.hidden.checkbox
       ) {
         tags.push(...[...page.properties.Tags.multi_select]);
       }
@@ -86,6 +88,7 @@ export const fetchPosts = async (databaseId: string) => {
     }
   }
   tags = filterDuplicateTags(tags);
+
   return { tags, posts };
 };
 
