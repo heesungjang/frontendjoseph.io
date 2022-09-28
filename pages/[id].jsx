@@ -72,15 +72,15 @@ export default function Post({ page, blocks, frontmatter }) {
   );
 }
 
-// export const getStaticPaths = async () => {
-//   const database = await fetchDatabase(databaseId);
-//   return {
-//     paths: database.map((page) => ({ params: { id: page.id } })),
-//     fallback: true,
-//   };
-// };
+export const getStaticPaths = async () => {
+  const database = await fetchDatabase(databaseId);
+  return {
+    paths: database.map((page) => ({ params: { id: page.id } })),
+    fallback: true,
+  };
+};
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
   const { id } = context.params;
   const page = await fetchPage(id);
   const blocks = await fetchBlocks(id);
@@ -119,5 +119,6 @@ export const getServerSideProps = async (context) => {
       blocks: blocksWithChildren,
       frontmatter: frontmatter,
     },
+    revalidate: 60,
   };
 };
