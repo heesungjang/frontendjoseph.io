@@ -50,7 +50,7 @@ const PostWrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  gap: 2rem;
+
   width: 100%;
   border-radius: 8px;
   /* padding: 24px; */
@@ -61,7 +61,7 @@ const PostWrapper = styled.div`
     }
   }
   transition: all 0.2s linear;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 `;
 
 const PostInfoContainer = styled.div`
