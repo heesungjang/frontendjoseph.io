@@ -3,8 +3,8 @@ import React from 'react';
 
 const LoadingDot = {
   display: 'block',
-  width: '2rem',
-  height: '2rem',
+  width: '1rem',
+  height: '1rem',
   backgroundColor: '#404040',
   borderRadius: '50%',
 };
