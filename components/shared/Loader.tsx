@@ -48,6 +48,7 @@ export default function ThreeDotsWave() {
   return (
     <div
       style={{
+        zIndex: 999,
         position: 'fixed',
         top: -60,
         paddingTop: '5rem',
