@@ -15,11 +15,17 @@ type ContentProps = {
   posts: Post[];
   tags: Tag[];
   frontmatter: Frontmatter;
+  loading: boolean;
 };
 
-const Content: React.FC<ContentProps> = ({ posts, frontmatter, tags }) => {
+const Content: React.FC<ContentProps> = ({
+  posts,
+  frontmatter,
+  tags,
+  loading,
+}) => {
   return (
-    <ContentWrapper>
+    <ContentWrapper loading={loading}>
       <MainContentsContainer>
         <MainContents>
           {/* top section (description)*/}
@@ -40,13 +46,15 @@ const Content: React.FC<ContentProps> = ({ posts, frontmatter, tags }) => {
   );
 };
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.div<{ loading: boolean }>`
+  opacity: ${(p) => (p.loading ? 0.2 : null)};
   position: 'relative';
   display: flex;
   flex-direction: column;
   height: 100%;
   min-height: 100vh;
   width: calc(100% - 40px);
+  transition: all 0.1s linear;
 
   ${media.greaterThan('md')`
   width: 620px;
