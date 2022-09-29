@@ -54,7 +54,7 @@ export type NotionColorsTypes =
   | 'red';
 const notionColors = {
   default: '#fffffc',
-  gray: '#eae4e9',
+  gray: '#d1cccf',
   brown: '#fde4cf',
   orange: '#ffdab9',
   yellow: '#faedcb',
@@ -74,6 +74,7 @@ export const light = {
   black: '#404040',
   gray: '#79797A',
   darkgray: '#404040',
+  lightgray: '#F1F1EF',
 };
 export const dark: ThemeType = {
   font,
@@ -84,6 +85,7 @@ export const dark: ThemeType = {
   black: '#262626',
   gray: '#888888',
   darkgray: '#D4D4D4',
+  lightgray: '#F1F1EF',
 };
 
 const theme = light;

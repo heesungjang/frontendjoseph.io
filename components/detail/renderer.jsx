@@ -1,5 +1,7 @@
 import {
   BlockQuote,
+  CalloutBulb,
+  CalloutWrapper,
   H1,
   H2,
   H3,
@@ -168,6 +170,13 @@ export const renderBlock = (block) => {
         <LinkText href={href} target="_brank">
           {href}
         </LinkText>
+      );
+    case 'callout':
+      return (
+        <CalloutWrapper>
+          <CalloutBulb>💡</CalloutBulb>
+          <Text key={value.id} text={value.rich_text} />
+        </CalloutWrapper>
       );
     default:
       return `❌ Unsupported block (${
