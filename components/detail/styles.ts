@@ -158,6 +158,7 @@ export const ProgressBar = styled(motion.div)`
 `;
 
 export const CalloutWrapper = styled.div`
+  margin: 20px 0;
   position: relative;
   background-color: ${(p) => p.theme.lightgray};
   padding: 20px 50px;
