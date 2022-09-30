@@ -24,6 +24,7 @@ import { Divider, EmptySpaceHolder } from '../components/main/Content';
 // packages
 import { useScroll } from 'framer-motion';
 import { isFullBlock } from '@notionhq/client';
+import Utterances from '../components/shared/Utterances';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -71,6 +72,9 @@ export default function Post({ page, blocks, frontmatter }) {
           ))}
         </section>
       </ArticleWrapper>
+
+      <Utterances />
+
       <EmptySpaceHolder style={{ marginBottom: '50px' }} />
     </PostWrapper>
   );
