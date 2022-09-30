@@ -46,8 +46,8 @@ export default function Post({ page, blocks, frontmatter }) {
         <meta
           property="og:title"
           content={`Heelog ${
-            ' | ' + page.properties.Name.title[0].plain_text
-              ? page.properties.Name.title[0].plain_text
+            +page.properties.Name.title[0].plain_text
+              ? ' | ' + page.properties.Name.title[0].plain_text
               : ''
           }`}
         />
