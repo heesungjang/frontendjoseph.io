@@ -43,6 +43,14 @@ export default function Post({ page, blocks, frontmatter }) {
       />
       <Head>
         <title>{`${frontmatter.title[0].text.content} | ${page.properties.Name.title[0].plain_text}`}</title>
+        <meta
+          property="og:title"
+          content={`Heelog ${
+            ' | ' + frontmatter.title[0].text.content
+              ? frontmatter.title[0].text.content
+              : ''
+          }`}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
