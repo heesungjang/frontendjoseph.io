@@ -1,47 +1,30 @@
 // React & Next
-import { Fragment } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-
-// lib & components
-import {
-  ArticleWrapper,
-  Created,
-  GoBack,
-  H1Title,
-  PostWrapper,
-  ProgressBar,
-} from '../components/detail/styles';
-import { renderBlock, Text } from '../components/detail/renderer';
+// Lib
 import {
   fetchPage,
   fetchBlocks,
   fetchDatabase,
   fetchFrontMatter,
 } from '../lib/notions';
-import { Divider, EmptySpaceHolder } from '../components/main/Content';
-
-// packages
-import { useScroll } from 'framer-motion';
 import { isFullBlock } from '@notionhq/client';
+// Components
+import { Post } from '../components/Post';
 import Utterances from '../components/shared/Utterances';
+import { AnimatedProgressBar } from '../components/shared/ProgressBar';
+import { EmptySpaceHolder } from '../components/Layout/FrontPage/styles';
+// Styles
+import { PostWrapper } from './styles';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
-export default function Post({ page, blocks, frontmatter }) {
-  const { scrollYProgress } = useScroll();
-
+export default function DetailPage({ page, blocks, frontmatter }) {
   if (!page || !blocks) {
     return <div />;
   }
 
   return (
     <PostWrapper>
-      <ProgressBar
-        style={{
-          scaleX: scrollYProgress,
-        }}
-      />
       <Head>
         <title>{`${frontmatter.title[0].text.content} | ${page.properties.Name.title[0].plain_text}`}</title>
         <meta
@@ -50,31 +33,9 @@ export default function Post({ page, blocks, frontmatter }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <ArticleWrapper>
-        <Link href="/">
-          <GoBack>← Go Back</GoBack>
-        </Link>
-        <H1Title>
-          <Text text={page.properties.Name.title} />
-        </H1Title>
-        <Created>
-          {page.properties?.Authors?.people[0]?.name
-            ? ' ' + page.properties?.Authors?.people[0]?.name
-            : ' unknown'}
-        </Created>
-        <Created>{page.properties.Date.date?.start.slice(0, 10)}</Created>
-
-        <Divider mt={20} />
-        <section>
-          {blocks.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
-        </section>
-      </ArticleWrapper>
-
+      <AnimatedProgressBar />
+      <Post page={page} blocks={blocks} />
       <Utterances />
-
       <EmptySpaceHolder style={{ marginBottom: '50px' }} />
     </PostWrapper>
   );

@@ -1,18 +1,19 @@
-import type { AppProps } from 'next/app';
-import theme from '../styles/theme';
-import { FontStyles, GlobalStyle } from '../styles/GlobalStyle';
-
-import { ThemeProvider } from 'styled-components';
-import Header from '../components/shared/Header';
-import Footer from '../components/shared/Footer';
-
-import { AnimatePresence, motion } from 'framer-motion';
-import { useRouter } from 'next/router';
+// React & Next
 import Head from 'next/head';
+import { Fragment } from 'react';
+import type { AppProps } from 'next/app';
+// Components
+import Footer from '../components/shared/Footer';
+import Header from '../components/shared/Header';
+import { Transition } from '../components/Layout/Transition';
+// Styles
+import theme from '../styles/theme';
+import { ThemeProvider } from 'styled-components';
+import { FontStyles, GlobalStyle } from '../styles/GlobalStyle';
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <Fragment>
       <Head>
         <meta
           name="viewport"
@@ -28,46 +29,8 @@ function App({ Component, pageProps }: AppProps) {
         </Transition>
         <Footer />
       </ThemeProvider>
-    </>
+    </Fragment>
   );
 }
-
-const variants = {
-  out: {
-    opacity: 0,
-    y: 40,
-    transition: {
-      duration: 0.5,
-    },
-  },
-  in: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
-const Transition: React.FC<{
-  children: JSX.Element;
-}> = ({ children }) => {
-  const { asPath } = useRouter();
-
-  return (
-    <AnimatePresence initial={true} mode="wait">
-      <motion.div
-        key={asPath}
-        variants={variants}
-        animate="in"
-        initial="out"
-        exit="out"
-        style={{ overflow: 'hidden' }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  );
-};
 
 export default App;

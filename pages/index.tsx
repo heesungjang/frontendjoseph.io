@@ -1,20 +1,16 @@
 // Next
-import { useEffect, useState } from 'react';
+import Head from 'next/head';
 import type { NextPage } from 'next';
-
 // lib & components & styles
 
-import Content from '../components/main/Content';
 import { NotionColorsTypes } from '../styles/theme';
 import { fetchPosts, fetchFrontMatter } from '../lib/notions';
-
-// packages
-import styled from 'styled-components';
-
-import { motion } from 'framer-motion';
-import Head from 'next/head';
-import Router from 'next/router';
-import ThreeDotsWave from '../components/shared/Loader';
+//Hooks
+import { usePageLoadingState } from '../hooks/usePageLoadingState';
+//styles
+import { MainWrapper } from './styles';
+import FrontPage from '../components/Layout/FrontPage';
+import { Fragment } from 'react';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -45,56 +41,28 @@ type MainProps = {
 };
 
 const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const start = () => {
-      setLoading(true);
-    };
-    const end = () => {
-      setLoading(false);
-    };
-
-    Router.events.on('routeChangeStart', start);
-    Router.events.on('routeChangeComplete', end);
-    Router.events.on('routeChangeError', end);
-
-    return () => {
-      Router.events.off('routeChangeStart', start);
-      Router.events.off('routeChangeComplete', end);
-      Router.events.off('routeChangeError', end);
-    };
-  }, []);
+  const loading = usePageLoadingState();
 
   return (
-    <>
+    <Fragment>
       <MainWrapper exit={{ opacity: 0 }}>
         <Head>
           <title>{frontmatter.title}</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Content
-          posts={posts}
-          frontmatter={frontmatter}
+        <FrontPage
           tags={tags}
+          posts={posts}
           loading={loading}
+          frontmatter={frontmatter}
         />
       </MainWrapper>
-    </>
+    </Fragment>
   );
 };
 
-const MainWrapper = styled(motion.div)`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 export default Main;
 
-// SSG
 export const getStaticProps = async () => {
   if (databaseId) {
     const { tags, posts } = await fetchPosts(databaseId);

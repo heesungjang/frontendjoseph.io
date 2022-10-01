@@ -48,7 +48,6 @@ export default class MyDocument extends Document {
             content="ChvAiVmZw6S-b5QSs8uDVMABJaNOYMoGBX-TH3wPx-Q"
           />
         </Head>
-
         <body>
           <Main />
           <NextScript />

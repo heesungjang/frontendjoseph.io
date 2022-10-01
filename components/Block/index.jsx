@@ -51,12 +51,12 @@ export const renderNestedList = (block) => {
   const isNumberedList = value.children[0].type === 'numbered_list_item';
 
   if (isNumberedList) {
-    return <ol>{value.children.map((block) => renderBlock(block))}</ol>;
+    return <ol>{value.children.map((block) => Block(block))}</ol>;
   }
-  return <ul>{value.children.map((block) => renderBlock(block))}</ul>;
+  return <ul>{value.children.map((block) => Block(block))}</ul>;
 };
 
-export const renderBlock = (block) => {
+export const Block = (block) => {
   const { type, id } = block;
   const value = block[type];
 
@@ -109,7 +109,7 @@ export const renderBlock = (block) => {
             <Text text={value.rich_text} />
           </summary>
           {value.children?.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+            <Fragment key={block.id}>{Block(block)}</Fragment>
           ))}
         </details>
       );

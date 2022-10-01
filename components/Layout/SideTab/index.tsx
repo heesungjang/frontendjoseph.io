@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Tag } from '../../pages';
-import { media } from '../../styles/media';
-import { Tag as TagComponent } from './RenderPosts';
-import Tags from './Tags';
+import { Tag } from '../../../pages';
+import { media } from '../../../styles/media';
+import { Tag as TagComponent } from '../Posts/styles';
+
+import Tags from '../../shared/Tags';
 
 type TagsProps = {
   tags: Tag[];

@@ -1,46 +1,7 @@
-// React & Next
-import React from 'react';
-
-// pages & components & styles
-import { Post } from '../../pages';
-import { NotionColorsTypes, TagSize } from '../../styles/theme';
-
-// packages
 import styled from 'styled-components';
+import { NotionColorsTypes, TagSize } from '../../../styles/theme';
 
-import Link from 'next/link';
-
-type PostProps = {
-  posts: Post[];
-};
-
-const RenderPosts: React.FC<PostProps> = ({ posts }) => {
-  const renderedPosts = posts.map((post) => {
-    const tags = post.tags.map((tag) => (
-      <Tag key={tag.id} tagColor={tag.color} size="xs">
-        {tag.name}
-      </Tag>
-    ));
-
-    if (!post.isHidden) {
-      return (
-        <Link href={`/${post.id}`} key={post.id}>
-          <PostWrapper>
-            <PostInfoContainer>
-              <BlogTitle>{post.title}</BlogTitle>
-              <BlogDescription>{post.description}</BlogDescription>
-              <TagContainer>{[...tags]}</TagContainer>
-            </PostInfoContainer>
-          </PostWrapper>
-        </Link>
-      );
-    }
-  });
-
-  return <>{[...renderedPosts]}</>;
-};
-
-const PostWrapper = styled.div`
+export const PostWrapper = styled.div`
   text-decoration: none;
   color: inherit;
   box-sizing: border-box;
@@ -63,7 +24,7 @@ const PostWrapper = styled.div`
   margin-bottom: 40px;
 `;
 
-const PostInfoContainer = styled.div`
+export const PostInfoContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -71,7 +32,7 @@ const PostInfoContainer = styled.div`
   justify-content: flex-start;
 `;
 
-const BlogTitle = styled.h2`
+export const BlogTitle = styled.h2`
   line-height: 1.2;
   font-size: ${(p) => p.theme.font.xl2};
   font-weight: ${(p) => p.theme.fontWeight.medium};
@@ -79,14 +40,14 @@ const BlogTitle = styled.h2`
   width: fit-content;
 `;
 
-const BlogDescription = styled.span`
+export const BlogDescription = styled.span`
   font-size: ${(p) => p.theme.font.sm};
   font-weight: ${(p) => p.theme.fontWeight.normal};
   color: ${(p) => p.theme.gray};
   line-height: 1.5;
 `;
 
-const TagContainer = styled.div`
+export const TagContainer = styled.div`
   display: flex;
   gap: 8px;
   width: 100%;
@@ -104,5 +65,3 @@ export const Tag = styled.span<{ tagColor: NotionColorsTypes; size: TagSize }>`
   opacity: 0.9;
   cursor: pointer;
 `;
-
-export default RenderPosts;

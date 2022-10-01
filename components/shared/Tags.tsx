@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Tag as TagType } from '../../pages';
-import { Tag } from './RenderPosts';
+import { Tag } from '../Layout/Posts/styles';
 
 type TagsProps = {
   tags: TagType[];
