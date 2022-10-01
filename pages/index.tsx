@@ -1,16 +1,16 @@
-// Next
+// Next & React
 import Head from 'next/head';
+import { Fragment } from 'react';
 import type { NextPage } from 'next';
 // lib & components & styles
-
 import { NotionColorsTypes } from '../styles/theme';
 import { fetchPosts, fetchFrontMatter } from '../lib/notions';
-//Hooks
+// Hooks
 import { usePageLoadingState } from '../hooks/usePageLoadingState';
-//styles
-import { MainWrapper } from './styles';
+// Styles
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 import FrontPage from '../components/Layout/FrontPage';
-import { Fragment } from 'react';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -60,6 +60,14 @@ const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
     </Fragment>
   );
 };
+
+const MainWrapper = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export default Main;
 

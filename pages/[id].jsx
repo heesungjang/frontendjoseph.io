@@ -41,6 +41,16 @@ export default function DetailPage({ page, blocks, frontmatter }) {
   );
 }
 
+const PostWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: stretch;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+`;
+
 export const getStaticPaths = async () => {
   const database = await fetchDatabase(databaseId);
   return {
