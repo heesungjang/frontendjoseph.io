@@ -11,6 +11,7 @@ import { Frontmatter, Post, Tag } from '../../pages';
 import styled from 'styled-components';
 import SideTab from './SideTab';
 import Image from 'next/image';
+import { getIOSInputEventHandlers } from '../../lib/utils';
 
 type ContentProps = {
   posts: Post[];
@@ -41,6 +42,7 @@ const Content: React.FC<ContentProps> = ({
             <SearchInput
               placeholder="Search Posts..."
               value={searchValue}
+              {...getIOSInputEventHandlers()}
               onChange={(e) => setSearchValue(e.target.value)}
             />
             <IconWrapper>
