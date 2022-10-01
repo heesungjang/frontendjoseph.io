@@ -42,7 +42,6 @@ const Content: React.FC<ContentProps> = ({
             <SearchInput
               placeholder="Search Posts..."
               value={searchValue}
-              {...getIOSInputEventHandlers()}
               onChange={(e) => setSearchValue(e.target.value)}
             />
             <IconWrapper>
