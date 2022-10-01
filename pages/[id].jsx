@@ -9,6 +9,7 @@ import {
 } from '../lib/notions';
 import { isFullBlock } from '@notionhq/client';
 // Components
+import styled from 'styled-components';
 import { Post } from '../components/Post';
 import Utterances from '../components/shared/Utterances';
 import { AnimatedProgressBar } from '../components/shared/ProgressBar';
