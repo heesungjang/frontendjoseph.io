@@ -10,6 +10,7 @@ import { Frontmatter, Post, Tag } from '../../pages';
 // packages
 import styled from 'styled-components';
 import SideTab from './SideTab';
+import Image from 'next/image';
 
 type ContentProps = {
   posts: Post[];
@@ -25,15 +26,36 @@ const Content: React.FC<ContentProps> = ({
   // tags,
   loading,
 }) => {
+  const [searchValue, setSearchValue] = useState('');
+  const filteredBlogPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchValue.toLowerCase())
+  );
   return (
     <ContentWrapper loading={loading.toString()}>
       <MainContentsContainer>
         <MainContents>
           {/* top section (description)*/}
           <Description frontmatter={frontmatter} />
-          <Divider mt={45} mb="30px" />
+
+          <SearchContainer>
+            <SearchInput
+              placeholder="Search Posts..."
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <IconWrapper>
+              <Image
+                src="/assets/search_icon.png"
+                alt="search-box"
+                width={15}
+                height={15}
+              />
+            </IconWrapper>
+          </SearchContainer>
+
+          <Divider mt={20} mb="30px" />
           {/* posts section (posts)*/}
-          <RenderPosts posts={posts} />
+          <RenderPosts posts={filteredBlogPosts} />
           <SideTapContainer>{/* <SideTab tags={tags} /> */}</SideTapContainer>
         </MainContents>
       </MainContentsContainer>
@@ -94,4 +116,45 @@ const SideTapContainer = styled.div`
   position: relative;
 `;
 
+const SearchContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+`;
+
+const SearchInput = styled.input`
+  width: 100%;
+  font-weight: ${(p) => p.theme.fontWeight.medium};
+  font-size: ${(p) => p.theme.font.sm};
+  color: ${(p) => p.theme.darkgray};
+  background-color: #f7f6f7;
+  border: none;
+  height: 36px;
+  border-radius: 6px;
+  opacity: 0.8;
+  :focus {
+    ::placeholder {
+      color: ${(p) => p.theme.darkgray};
+    }
+  }
+  transition: all 0.2s;
+  padding-left: 32px;
+  padding-right: 3px;
+`;
+
+const DescriptionText = styled.div`
+  white-space: pre-wrap;
+  line-height: 1.625;
+  margin-top: 24px;
+`;
+
+const IconWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  margin-top: 2;
+  padding-left: 8px;
+  opacity: 0.5;
+`;
 export default Content;
