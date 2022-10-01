@@ -55,6 +55,11 @@ const Content: React.FC<ContentProps> = ({
 
           <Divider mt={20} mb="30px" />
           {/* posts section (posts)*/}
+          {!filteredBlogPosts.length && (
+            <NoSearchPostContainer>
+              <NoSearchPostText>검색 결과가 없습니다.</NoSearchPostText>
+            </NoSearchPostContainer>
+          )}
           <RenderPosts posts={filteredBlogPosts} />
           <SideTapContainer>{/* <SideTab tags={tags} /> */}</SideTapContainer>
         </MainContents>
@@ -66,6 +71,19 @@ const Content: React.FC<ContentProps> = ({
     </ContentWrapper>
   );
 };
+
+const NoSearchPostContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+const NoSearchPostText = styled.span`
+  font-size: ${(p) => p.theme.font.xl};
+  font-weight: ${(p) => p.theme.fontWeight.semibold};
+  color: ${(p) => p.theme.gray};
+`;
 
 const ContentWrapper = styled.div<{ loading: string }>`
   opacity: ${(p) => (p.loading === 'true' ? 0.6 : undefined)};
