@@ -13,8 +13,6 @@ import { Post } from '../components/Post';
 import Utterances from '../components/shared/Utterances';
 import { AnimatedProgressBar } from '../components/shared/ProgressBar';
 import { EmptySpaceHolder } from '../components/Layout/FrontPage/styles';
-// Styles
-import { PostWrapper } from './styles';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
