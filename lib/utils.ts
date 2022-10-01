@@ -1,7 +1,9 @@
 import { TouchEvent } from 'react';
 
-export function isIOS() {
-  return !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+function isIOS() {
+  if (global.navigator) {
+    return !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  }
 }
 
 export function getIOSInputEventHandlers() {
