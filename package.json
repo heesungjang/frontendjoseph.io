@@ -12,7 +12,6 @@
   "dependencies": {
     "@blazity/next-image-proxy": "^1.0.2",
     "@notionhq/client": "^2.2.0",
-    "file-loader": "^6.2.0",
     "framer-motion": "^7.3.6",
     "next": "12.3.0",
     "next-sitemap": "^3.1.23",
