@@ -9,7 +9,7 @@ import { Transition } from '../components/Layout/Transition';
 // Styles
 import theme from '../styles/theme';
 import { ThemeProvider } from 'styled-components';
-import { FontStyles, GlobalStyle } from '../styles/GlobalStyle';
+import { GlobalStyle } from '../styles/GlobalStyle';
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -21,7 +21,6 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStyle />
-      <FontStyles />
       <ThemeProvider theme={theme}>
         <Header />
         <Transition>
