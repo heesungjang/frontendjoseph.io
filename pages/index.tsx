@@ -85,7 +85,7 @@ export const getStaticProps = async () => {
           description: frontmatter?.description[0].plain_text,
         },
       },
-      revalidate: 60,
+      revalidate: 3600,
     };
   }
 };

@@ -97,6 +97,6 @@ export const getStaticProps = async (context) => {
       blocks: blocksWithChildren,
       frontmatter: frontmatter,
     },
-    revalidate: 60,
+    revalidate: 3600,
   };
 };
