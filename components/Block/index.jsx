@@ -6,9 +6,11 @@ import {
   H2,
   H3,
   HR,
+  ImageWrapper,
   LinkText,
   List,
   Paragraph,
+  PostImage,
   TextSpan,
 } from './styles';
 
@@ -119,15 +121,17 @@ export const Block = (block) => {
       const src =
         value.type === 'external' ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : '';
+
       return (
-        <figure style={{ marginTop: '20px' }}>
-          <img
-            src={src}
+        <ImageWrapper>
+          <PostImage
+            src={`/api/imageProxy?imageUrl=${src}`}
+            layout="fill"
             alt={caption ? caption : 'image'}
-            style={{ width: '100%', height: 'auto' }}
+            priority
           />
           {caption && <figcaption>{caption}</figcaption>}
-        </figure>
+        </ImageWrapper>
       );
     case 'divider':
       return <HR key={id} />;

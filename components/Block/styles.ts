@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from 'styled-components';
 import { NotionColorsTypes } from '../../styles/theme';
 
@@ -104,4 +105,20 @@ export const CalloutWrapper = styled.div`
 export const CalloutBulb = styled.div`
   position: absolute;
   left: 18px;
+`;
+
+export const ImageWrapper = styled.div`
+  position: relative;
+  margin-top: 20px;
+  height: 100%;
+  span {
+    position: unset !important;
+  }
+`;
+
+export const PostImage = styled(Image)`
+  object-fit: scale-down;
+  width: unset !important;
+  position: relative !important;
+  height: 100% !important;
 `;

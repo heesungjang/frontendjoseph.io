@@ -4,7 +4,6 @@ const Utterances = () => {
   const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    console.log('123');
     const scriptElem = document.createElement('script');
     scriptElem.src = 'https://utteranc.es/client.js';
     scriptElem.async = true;
