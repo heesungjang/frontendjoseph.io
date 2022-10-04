@@ -6,4 +6,6 @@
 
 정작 사이트 생성을 위해서 **Next.js** 프레임워크를 사용했고 **Notion API**를 연동해 Notion으로 콘텐츠 관리를 하고 있습니다.
 
+![](https://velog.velcdn.com/images/heesungj7/post/e6835674-3ffa-4e43-9dae-e185726cfc10/image.png)
+
 테마가 궁금하시다면 [블로그 페이지](https://heelog.dev/) 방문해주세요 🙏
