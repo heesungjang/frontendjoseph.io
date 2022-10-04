@@ -67,6 +67,7 @@ const MainWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${(p) => p.theme.bg};
 `;
 
 export default Main;
