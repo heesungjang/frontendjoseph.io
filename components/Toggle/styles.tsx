@@ -20,11 +20,11 @@ export const ToggleButton = styled.span<{ on: boolean }>`
   position: relative;
   cursor: pointer;
   user-select: none;
-  background: ${(p) => (p.on ? 'black' : '#fbfbfb')};
+  background: ${(p) => (p.on ? p.theme.black : '#fbfbfb')};
   border-radius: 4em;
   padding: 4px;
   transition: all 0.4s ease;
-  border: 2px solid ${(p) => (p.on ? '#FEC309' : '#e8eae9')};
+  border: 2px solid #e8eae9;
   ::after {
     left: ${(p) => (p.on ? '65%' : 0)};
     position: relative;
@@ -33,7 +33,7 @@ export const ToggleButton = styled.span<{ on: boolean }>`
     width: 35%;
     height: 100%;
     border-radius: 1em;
-    background: ${(p) => (p.on ? '#FEC309' : '#e8eae9')};
+    background: #e8eae9;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
       padding 0.3s ease, margin 0.3s ease;
     box-shadow: ${(p) =>
