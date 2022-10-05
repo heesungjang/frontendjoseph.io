@@ -32,7 +32,7 @@ export default function DetailPage({ page, blocks, frontmatter }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AnimatedProgressBar />
+      {/* <AnimatedProgressBar /> */}
       <Post page={page} blocks={blocks} />
       <Utterances />
       <EmptySpaceHolder style={{ marginBottom: '50px' }} />

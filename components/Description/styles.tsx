@@ -5,7 +5,7 @@ export const ThreeDContainer = styled.div`
   height: 230px;
   position: relative;
   display: flex;
-
+  background-color: transparent;
   justify-content: center;
 `;
 

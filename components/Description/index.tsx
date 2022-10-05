@@ -49,9 +49,9 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
             </Link>
           )}
 
-          {slug.linkedIn && (
+          {/* {slug.linkedIn && (
             <Link href={slug.linkedIn}>
-              <a rel="noopener noreferrer" style={{ opacity: 0.856 }}>
+              <a rel="noopener noreferrer" style={{ opacity: 0.85 }}>
                 <Linkedin
                   width={20}
                   height={20}
@@ -59,7 +59,7 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
                 />
               </a>
             </Link>
-          )}
+          )} */}
 
           {slug.email && (
             <Link href={`mailto:${slug.email}`}>

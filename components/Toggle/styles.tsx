@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const ToggleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 2px;
+`;
+
 export const ToggleInput = styled.input`
   border: 0;
   clip: rect(0 0 0 0);
@@ -11,7 +20,7 @@ export const ToggleInput = styled.input`
   width: 1px;
   white-space: nowrap;
 `;
-export const ToggleButton = styled.span<{ on: boolean }>`
+export const ToggleButton = styled.span<{ on: number }>`
   box-sizing: initial;
   display: inline-block;
   outline: 0;
@@ -20,7 +29,7 @@ export const ToggleButton = styled.span<{ on: boolean }>`
   position: relative;
   cursor: pointer;
   user-select: none;
-  background: ${(p) => (p.on ? p.theme.black : '#fbfbfb')};
+  background: ${(p) => p.theme.bg};
   border-radius: 4em;
   padding: 4px;
   transition: all 0.4s ease;

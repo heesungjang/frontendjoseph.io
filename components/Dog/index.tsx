@@ -51,6 +51,7 @@ const ThreeDog: React.FC = () => {
       });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
+
       renderer.outputEncoding = THREE.sRGBEncoding;
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
@@ -122,7 +123,7 @@ const ThreeDog: React.FC = () => {
     };
   }, [renderer, handleWindowResize]);
 
-  return <DogModel ref={refBody}>{loading && null}</DogModel>;
+  return <DogModel ref={refBody}></DogModel>;
 };
 
 const DogModel = styled.div`
@@ -132,7 +133,6 @@ const DogModel = styled.div`
   height: 100%;
   width: 100%;
   cursor: pointer;
-  background-color: transparent;
 `;
 
 export default ThreeDog;

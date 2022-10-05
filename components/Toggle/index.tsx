@@ -1,5 +1,6 @@
 import React from 'react';
-import { ToggleButton, ToggleInput, ToggleText } from './styles';
+import { toggleThemeMode, useThemeMode } from '../../hooks/useTheme';
+import { ToggleButton, ToggleInput, ToggleText, ToggleWrapper } from './styles';
 
 type ToggleProps = {
   children: React.ReactElement | React.ReactElement[];
@@ -9,26 +10,21 @@ const Switch = ({ on, toggle }: { on: boolean; toggle: () => void }) => {
   return (
     <label>
       <ToggleInput />
-      <ToggleButton on={on} onClick={toggle} />
+      <ToggleButton on={on ? 1 : 0} onClick={toggle} />
     </label>
   );
 };
 
 const Toggle: React.FunctionComponent<ToggleProps> = ({ children }) => {
-  const [on, setOn] = React.useState(false);
-  const toggle = () => setOn(!on);
+  const {
+    state: { isDark: on },
+    dispatch: themeModeDispatch,
+  } = useThemeMode();
+  // const [on, setOn] = React.useState(false);
+  const toggle = () => toggleThemeMode(themeModeDispatch);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: '10px',
-        gap: '2px',
-      }}
-    >
+    <ToggleWrapper>
       {React.Children.map(children, (child) => {
         if (child) {
           return typeof child.type === 'string'
@@ -36,7 +32,7 @@ const Toggle: React.FunctionComponent<ToggleProps> = ({ children }) => {
             : React.cloneElement(child, { on, toggle });
         }
       })}
-    </div>
+    </ToggleWrapper>
   );
 };
 
@@ -45,15 +41,13 @@ interface Props {
   children?: any;
   toggle?: () => void;
 }
-// Accepts `on` and `children` props and returns `children` if `on` is true
+
 export const ToggleOn = ({ on, children }: Props) =>
   on ? <ToggleText>{children}</ToggleText> : null;
 
-// Accepts `on` and `children` props and returns `children` if `on` is false
 export const ToggleOff = ({ on, children }: Props) =>
   !on ? <ToggleText>{children}</ToggleText> : null;
 
-// Accepts `on` and `toggle` props and returns the <Switch /> with those props.
 export const ToggleSwitch = ({ on, toggle }: Props) => {
   if (on === undefined) {
     on = false;

@@ -36,8 +36,8 @@ export const BlogTitle = styled.h2`
   line-height: 1.2;
   font-size: ${(p) => p.theme.font.xl2};
   font-weight: ${(p) => p.theme.fontWeight.medium};
-
   width: fit-content;
+  color: ${(p) => p.theme.black};
 `;
 
 export const BlogDescription = styled.span`
@@ -60,7 +60,7 @@ export const Tag = styled.span<{ tagColor: NotionColorsTypes; size: TagSize }>`
   border-radius: 3px;
   font-size: ${(p) => p.theme.font[p.size]};
   font-weight: ${(p) => p.theme.fontWeight.normal};
-  color: ${(p) => p.theme.black};
+  color: #404040;
   background-color: ${(p) => p.theme.notionColors[p.tagColor]};
   opacity: 0.9;
   cursor: pointer;

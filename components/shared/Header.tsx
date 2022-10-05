@@ -39,16 +39,16 @@ const HeaderWrapper = styled.div<{ scrollPosition: number }>`
   position: sticky;
   color: ${(p) => p.theme.gray};
 
-  /* margin-bottom: 40px; */
   justify-content: center;
-  backdrop-filter: blur(8px);
-  background-color: rgb(255, 255, 255, 0.7);
-  /* background-color: rgb(64, 64, 64, 0.7); */
+  /* background-color: rgb(255, 255, 255, 0.7); */
+
+  /* background-color: ${(p) => p.theme.bg}; */
+  backdrop-filter: blur(10px);
 
   border-bottom-color: #ffff;
   border-bottom: ${(p) =>
-    p.scrollPosition >= 30 ? `1px solid #ebebeb` : null};
-  transition: all 0.2s linear;
+    p.scrollPosition >= 30 ? `1px solid ${p.theme.lightgray}` : null};
+  /* transition: all 0.2s linear; */
 `;
 
 const HeaderContent = styled.div`

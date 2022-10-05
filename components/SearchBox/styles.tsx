@@ -13,7 +13,7 @@ export const SearchInput = styled.input`
   font-weight: ${(p) => p.theme.fontWeight.medium};
   font-size: ${(p) => p.theme.font.sm};
   color: ${(p) => p.theme.darkgray};
-  background-color: #f7f6f7;
+  background-color: ${(p) => p.theme.lightgray};
   border: none;
   height: 36px;
   border-radius: 6px;

@@ -81,11 +81,11 @@ export const dark: ThemeType = {
   fontWeight,
   notionColors,
   bg: '#171717',
-  white: '#F5F5F5',
-  black: '#262626',
+  white: '#404040',
+  black: '#F5F5F5',
   gray: '#888888',
   darkgray: '#D4D4D4',
-  lightgray: '#F1F1EF',
+  lightgray: '#404040',
 };
 
 const theme = light;
