@@ -31,7 +31,6 @@ export function ThemeModeProvider({ children }: ThemeModeProviderProps) {
   const [state, dispatch] = useReducer(themeReducer, {
     isDark: false,
   });
-  console.log(state);
 
   const value = { state, dispatch };
 

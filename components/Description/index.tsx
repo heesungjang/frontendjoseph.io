@@ -3,15 +3,15 @@ import React from 'react';
 
 // pages & components
 import { Frontmatter } from '../../pages';
+import { FaGithub } from 'react-icons/fa';
+import { GrMail } from 'react-icons/gr';
 
 // packages
 
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { slug } from '../../slug';
-import GithubIcon from '../../public/assets/github.svg';
-import EmailIcon from '../../public/assets/email.svg';
-import Linkedin from '../../public/assets/linkedin.svg';
+
 import {
   DescriptionText,
   DescriptionWrapper,
@@ -19,6 +19,7 @@ import {
   ThreeDContainer,
   Title,
 } from './styles';
+import { useThemeMode } from '../../hooks/useTheme';
 
 type DescriptionProps = {
   frontmatter: Frontmatter;
@@ -30,6 +31,9 @@ const Dog = dynamic(() => import('../Dog'), {
 });
 
 const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
+  const {
+    state: { isDark },
+  } = useThemeMode();
   return (
     <DescriptionWrapper>
       <div>
@@ -40,33 +44,21 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
           {slug.gitHub && (
             <Link href={slug.gitHub}>
               <a target="_blank" rel="noopener noreferrer">
-                <GithubIcon
-                  width={20}
-                  height={20}
+                <FaGithub
+                  fill={isDark ? 'white' : 'black'}
+                  size={20}
                   aria-label="github_link_icon"
                 />
               </a>
             </Link>
           )}
 
-          {/* {slug.linkedIn && (
-            <Link href={slug.linkedIn}>
-              <a rel="noopener noreferrer" style={{ opacity: 0.85 }}>
-                <Linkedin
-                  width={20}
-                  height={20}
-                  aria-label="linkedin_link_icon"
-                />
-              </a>
-            </Link>
-          )} */}
-
           {slug.email && (
             <Link href={`mailto:${slug.email}`}>
               <a rel="noopener noreferrer">
-                <EmailIcon
-                  width={20}
-                  height={20}
+                <GrMail
+                  fill={isDark ? 'white' : 'black'}
+                  size={20}
                   aria-label="email_link_icon"
                 />
               </a>

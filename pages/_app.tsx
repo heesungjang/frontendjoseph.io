@@ -38,7 +38,6 @@ function CustomApp({ children }: { children: React.ReactNode }) {
   const {
     state: { isDark },
   } = useThemeMode();
-  console.log(isDark);
   return (
     <ThemeProvider theme={isDark ? darkTheme : theme}>
       <GlobalStyle />
