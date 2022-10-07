@@ -9,7 +9,7 @@ type ToggleProps = {
 const Switch = ({ on, toggle }: { on: boolean; toggle: () => void }) => {
   return (
     <label>
-      <ToggleInput />
+      <ToggleInput disabled={true} />
       <ToggleButton on={on ? 1 : 0} onClick={toggle} />
     </label>
   );
