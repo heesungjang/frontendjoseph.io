@@ -32,6 +32,7 @@ export default async function handler(
               pages.push(res.revalidate(`/${page.id}`));
             });
 
+            await res.revalidate('/');
             Promise.all(pages).then(() => {
               res.status(200).json({ revalidated: true });
             });
