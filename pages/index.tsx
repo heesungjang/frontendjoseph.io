@@ -36,11 +36,10 @@ export interface Frontmatter {
 
 type MainProps = {
   posts: Post[];
-  tags: Tag[];
   frontmatter: Frontmatter;
 };
 
-const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
+const Main: NextPage<MainProps> = ({ posts, frontmatter }) => {
   const loading = usePageLoadingState();
 
   return (
@@ -50,12 +49,7 @@ const Main: NextPage<MainProps> = ({ posts, frontmatter, tags }) => {
           <title>{frontmatter.title}</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <FrontPage
-          tags={tags}
-          posts={posts}
-          loading={loading}
-          frontmatter={frontmatter}
-        />
+        <FrontPage posts={posts} loading={loading} frontmatter={frontmatter} />
       </MainWrapper>
     </Fragment>
   );
@@ -74,13 +68,12 @@ export default Main;
 
 export const getStaticProps = async () => {
   if (databaseId) {
-    const { tags, posts } = await fetchPosts(databaseId);
+    const { posts } = await fetchPosts(databaseId);
     const frontmatter = await fetchFrontMatter(databaseId);
 
     return {
       props: {
         posts,
-        tags,
         frontmatter: {
           title: frontmatter?.title[0].plain_text,
           description: frontmatter?.description[0].plain_text,

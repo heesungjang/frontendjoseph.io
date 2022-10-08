@@ -1,5 +1,6 @@
 // React & Next
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 // Lib
 import {
   fetchPage,
@@ -11,8 +12,9 @@ import { isFullBlock } from '@notionhq/client';
 // Components
 import styled from 'styled-components';
 import { Post } from '../components/Post';
-import Utterances from '../components/shared/Utterances';
-import { AnimatedProgressBar } from '../components/shared/ProgressBar';
+
+const Utterances = dynamic(() => import('../components/shared/Utterances'));
+
 import { EmptySpaceHolder } from '../components/Layout/FrontPage/styles';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
@@ -32,7 +34,7 @@ export default function DetailPage({ page, blocks, frontmatter }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <AnimatedProgressBar /> */}
+
       <Post page={page} blocks={blocks} />
       <Utterances />
       <EmptySpaceHolder style={{ marginBottom: '50px' }} />

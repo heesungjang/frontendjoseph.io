@@ -1,6 +1,5 @@
 // React & Next
 import Head from 'next/head';
-import { Children, Fragment } from 'react';
 import type { AppProps } from 'next/app';
 // Components
 import Footer from '../components/shared/Footer';
@@ -8,7 +7,7 @@ import Header from '../components/shared/Header';
 import { Transition } from '../components/Layout/Transition';
 // Styles
 import theme, { dark as darkTheme } from '../styles/theme';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../styles/GlobalStyle';
 import { ThemeModeProvider, useThemeMode } from '../hooks/useTheme';
 

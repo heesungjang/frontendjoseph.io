@@ -18,7 +18,6 @@ import {
 
 type ContentProps = {
   posts: Post[];
-  tags: Tag[];
   frontmatter: Frontmatter;
   loading: boolean;
 };

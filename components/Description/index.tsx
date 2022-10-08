@@ -7,7 +7,6 @@ import { FaGithub } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
 
 // packages
-
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { slug } from '../../slug';
@@ -74,4 +73,4 @@ const Description: React.FC<DescriptionProps> = ({ frontmatter }) => {
   );
 };
 
-export default Description;
+export default React.memo(Description);
