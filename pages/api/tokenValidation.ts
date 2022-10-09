@@ -33,7 +33,7 @@ export default async function handler(
             });
 
             await res.revalidate('/');
-            Promise.all(pages).then(() => {
+            await Promise.all(pages).then(() => {
               res.status(200).json({ revalidated: true });
             });
           }
