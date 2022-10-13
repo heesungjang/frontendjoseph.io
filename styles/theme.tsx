@@ -62,7 +62,7 @@ const notionColors = {
   blue: '#a9def9',
   purple: '#e4c1f9',
   pink: '#f1c0e8',
-  red: '#f4989c',
+  red: '#f83741',
 };
 
 export const light = {

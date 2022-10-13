@@ -85,6 +85,9 @@ export const LinkText = styled.a`
 
 export const List = styled.li`
   margin-top: 12px;
+  ::marker {
+    color: ${(p) => p.theme.black};
+  }
 `;
 
 export const BlockQuote = styled.blockquote`
@@ -121,4 +124,10 @@ export const PostImage = styled(Image)`
   width: unset !important;
   position: relative !important;
   height: 100% !important;
+`;
+
+export const Summary = styled.summary`
+  ::marker {
+    color: ${(p) => p.theme.black};
+  }
 `;

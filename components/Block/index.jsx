@@ -11,6 +11,7 @@ import {
   List,
   Paragraph,
   PostImage,
+  Summary,
   TextSpan,
 } from './styles';
 
@@ -107,9 +108,9 @@ export const Block = (block) => {
     case 'toggle':
       return (
         <details>
-          <summary>
+          <Summary>
             <Text text={value.rich_text} />
-          </summary>
+          </Summary>
           {value.children?.map((block) => (
             <Fragment key={block.id}>{Block(block)}</Fragment>
           ))}
