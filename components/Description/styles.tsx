@@ -31,11 +31,3 @@ export const DescriptionText = styled.div`
   line-height: 1.625;
   margin-top: 24px;
 `;
-
-export const SlugContainer = styled.div`
-  margin-top: 25px;
-  width: 100%;
-  display: flex;
-  gap: 15px;
-  opacity: 0.8;
-`;

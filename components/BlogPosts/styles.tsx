@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { NotionColorsTypes, TagSize } from '../../../styles/theme';
+import { NotionColorsTypes } from '../../lib/types';
+import { TagSize } from '../../styles/theme';
 
 export const PostWrapper = styled.div`
   text-decoration: none;

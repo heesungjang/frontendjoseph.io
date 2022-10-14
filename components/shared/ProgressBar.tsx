@@ -21,6 +21,5 @@ export const ProgressBar = styled(motion.div)`
   height: 10px;
   background: #cdf0ea;
   opacity: 0.8;
-  /* backdrop-filter: blur(12px); */
   transform-origin: 0;
 `;

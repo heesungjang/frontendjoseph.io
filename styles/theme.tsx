@@ -41,17 +41,6 @@ export type TagSize =
   | 'xl5'
   | 'xl6';
 
-export type NotionColorsTypes =
-  | 'default'
-  | 'gray'
-  | 'brown'
-  | 'orange'
-  | 'yellow'
-  | 'green'
-  | 'blue'
-  | 'purple'
-  | 'pink'
-  | 'red';
 const notionColors = {
   default: '#fffffc',
   gray: '#d1cccf',

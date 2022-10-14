@@ -17,7 +17,12 @@ const Utterances = () => {
     }
   }, []);
 
-  return <section style={{ width: '100%' }} ref={ref}></section>;
+  return (
+    <section
+      style={{ width: '100%', marginBottom: '50px' }}
+      ref={ref}
+    ></section>
+  );
 };
 
 export default Utterances;

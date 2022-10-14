@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { Block, Text } from '../Block';
-import { Divider } from '../Layout/FrontPage/styles';
+import { Divider } from '../Layout/FrontPageLayout/styles';
 import { ArticleWrapper, Created, GoBack, H1Title } from './styles';
 
-export const Post = ({ page, blocks }) => {
+export const BlogPost = ({ page, blocks }) => {
   return (
     <ArticleWrapper>
       <Link href="/">

@@ -1,24 +1,16 @@
 // React & Next
 import React from 'react';
 import Link from 'next/link';
-// Components
-import { Post } from '../../../pages';
 //Styles
-import { NoSearchPostContainer, NoSearchPostText } from '../FrontPage/styles';
 import {
-  BlogDescription,
-  BlogTitle,
-  PostInfoContainer,
-  PostWrapper,
-  Tag,
-  TagContainer,
-} from './styles';
+  NoSearchPostContainer,
+  NoSearchPostText,
+} from '../Layout/FrontPageLayout/styles';
+import { BlogDescription, BlogTitle } from './styles';
+import { PostInfoContainer, PostWrapper, Tag, TagContainer } from './styles';
+import { Post } from '../../lib/types';
 
-type PostProps = {
-  posts: Post[];
-};
-
-const Posts: React.FC<PostProps> = ({ posts }) => {
+const BlogPosts = ({ posts }: { posts: Post[] }) => {
   if (!posts.length) {
     return (
       <NoSearchPostContainer>
@@ -52,4 +44,4 @@ const Posts: React.FC<PostProps> = ({ posts }) => {
   return <>{[...renderedPosts]}</>;
 };
 
-export default Posts;
+export default BlogPosts;

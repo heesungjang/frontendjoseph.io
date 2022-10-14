@@ -11,7 +11,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const ThreeDog: React.FC = () => {
   const refBody = useRef<HTMLDivElement>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [_, setLoading] = useState<boolean>(true);
   const [renderer, setRenderer] = useState<any>();
   const [_camera, setCamera] = useState<any>();
   const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0));

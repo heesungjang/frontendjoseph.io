@@ -12,7 +12,7 @@ import useScrollPosition from '../../hooks/useScrollPosition';
 import styled from 'styled-components';
 import Toggle, { ToggleOff, ToggleOn, ToggleSwitch } from '../Toggle';
 
-const Header: React.FC = () => {
+const Header = () => {
   const scrollPosition = useScrollPosition();
 
   return (
@@ -40,15 +40,12 @@ const HeaderWrapper = styled.div<{ scrollPosition: number }>`
   color: ${(p) => p.theme.gray};
 
   justify-content: center;
-  /* background-color: rgb(255, 255, 255, 0.7); */
 
-  /* background-color: ${(p) => p.theme.bg}; */
   backdrop-filter: blur(10px);
 
   border-bottom-color: #ffff;
   border-bottom: ${(p) =>
     p.scrollPosition >= 30 ? `1px solid ${p.theme.lightgray}` : null};
-  /* transition: all 0.2s linear; */
 `;
 
 const HeaderContent = styled.div`

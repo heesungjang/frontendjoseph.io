@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { NotionColorsTypes } from '../../styles/theme';
-
+import { NotionColorsTypes } from '../../lib/types';
 export const TextSpan = styled.span<{
   styles: {
     color: NotionColorsTypes;

@@ -11,21 +11,17 @@ import {
 import { isFullBlock } from '@notionhq/client';
 // Components
 import styled from 'styled-components';
-import { Post } from '../components/Post';
+import { BlogPost } from '../components/BlogPost';
 
 const Utterances = dynamic(() => import('../components/shared/Utterances'));
-
-import { EmptySpaceHolder } from '../components/Layout/FrontPage/styles';
-
-export const databaseId = process.env.NOTION_DATABASE_ID;
-
+const databaseId = process.env.NOTION_DATABASE_ID;
 export default function DetailPage({ page, blocks, frontmatter }) {
   if (!page || !blocks) {
     return <div />;
   }
 
   return (
-    <PostWrapper>
+    <PostLayout>
       <Head>
         <title>{`${frontmatter.title[0].text.content} | ${page.properties.Name.title[0].plain_text}`}</title>
         <meta
@@ -34,23 +30,11 @@ export default function DetailPage({ page, blocks, frontmatter }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Post page={page} blocks={blocks} />
+      <BlogPost page={page} blocks={blocks} />
       <Utterances />
-      <EmptySpaceHolder style={{ marginBottom: '50px' }} />
-    </PostWrapper>
+    </PostLayout>
   );
 }
-
-const PostWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: stretch;
-  height: 100%;
-  min-height: 100vh;
-  width: 100%;
-`;
 
 export const getStaticPaths = async () => {
   const database = await fetchDatabase(databaseId);
@@ -101,3 +85,13 @@ export const getStaticProps = async (context) => {
     },
   };
 };
+
+const PostLayout = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: stretch;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+`;

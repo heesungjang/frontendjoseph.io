@@ -2,10 +2,6 @@ import React from 'react';
 import { toggleThemeMode, useThemeMode } from '../../hooks/useTheme';
 import { ToggleButton, ToggleInput, ToggleText, ToggleWrapper } from './styles';
 
-type ToggleProps = {
-  children: React.ReactElement | React.ReactElement[];
-};
-
 const Switch = ({ on, toggle }: { on: boolean; toggle: () => void }) => {
   return (
     <label>
@@ -15,12 +11,16 @@ const Switch = ({ on, toggle }: { on: boolean; toggle: () => void }) => {
   );
 };
 
-const Toggle: React.FunctionComponent<ToggleProps> = ({ children }) => {
+const Toggle = ({
+  children,
+}: {
+  children: React.ReactElement | React.ReactElement[];
+}) => {
   const {
     state: { isDark: on },
     dispatch: themeModeDispatch,
   } = useThemeMode();
-  // const [on, setOn] = React.useState(false);
+
   const toggle = () => toggleThemeMode(themeModeDispatch);
 
   return (
