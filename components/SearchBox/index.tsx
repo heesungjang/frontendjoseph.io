@@ -3,7 +3,7 @@ import React from 'react';
 import { Divider } from '../Layout/FrontPageLayout/styles';
 import { IconWrapper, SearchContainer, SearchInput } from './styles';
 
-export const SearchBox = ({
+const SearchBox = ({
   searchValue,
   setSearchValue,
 }: {
@@ -12,8 +12,10 @@ export const SearchBox = ({
 }) => {
   return (
     <>
-      <SearchContainer onClick={() => setSearchValue(searchValue)}>
+      <SearchContainer>
         <SearchInput
+          id="search-blog-post-field"
+          type="text"
           placeholder="Search Posts..."
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
@@ -31,3 +33,5 @@ export const SearchBox = ({
     </>
   );
 };
+
+export default SearchBox;
