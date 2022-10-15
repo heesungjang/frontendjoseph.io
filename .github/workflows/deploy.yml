@@ -24,7 +24,7 @@ jobs:
           yarn install --frozen-lockfile
 
       - name: Run Tests Locally
-        run: npm run test
+        run: yarn run test
 
       - name: Deploy to Staging
         id: deploy-vercel-staging
