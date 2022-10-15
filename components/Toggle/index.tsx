@@ -6,7 +6,11 @@ const Switch = ({ on, toggle }: { on: boolean; toggle: () => void }) => {
   return (
     <label>
       <ToggleInput disabled={true} />
-      <ToggleButton on={on ? 1 : 0} onClick={toggle} />
+      <ToggleButton
+        on={on ? 1 : 0}
+        onClick={toggle}
+        data-testid="toggle-button"
+      />
     </label>
   );
 };
@@ -24,7 +28,7 @@ const Toggle = ({
   const toggle = () => toggleThemeMode(themeModeDispatch);
 
   return (
-    <ToggleWrapper>
+    <ToggleWrapper data-testid="toggle-component">
       {React.Children.map(children, (child) => {
         if (child) {
           return typeof child.type === 'string'
