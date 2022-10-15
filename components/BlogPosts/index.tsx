@@ -1,6 +1,7 @@
 // React & Next
 import React from 'react';
 import Link from 'next/link';
+
 //Styles
 import {
   NoSearchPostContainer,

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap",
-    "test": "jest --watch"
+    "test-dev": "jest --watch",
+    "test": "jest"
   },
   "dependencies": {
     "@blazity/next-image-proxy": "^1.0.2",
