@@ -16,7 +16,7 @@ export const TextSpan = styled.span<{
     code
       ? '#EB1D36'
       : color === 'default'
-      ? theme.black
+      ? theme.default
       : theme.notionColors[color]};
 
   font-weight: ${({ theme, styles: { bold } }) =>
@@ -85,7 +85,7 @@ export const LinkText = styled.a`
 export const List = styled.li`
   margin-top: 12px;
   ::marker {
-    color: ${(p) => p.theme.black};
+    color: ${(p) => p.theme.default};
   }
 `;
 
@@ -127,6 +127,6 @@ export const PostImage = styled(Image)`
 
 export const Summary = styled.summary`
   ::marker {
-    color: ${(p) => p.theme.black};
+    color: ${(p) => p.theme.default};
   }
 `;

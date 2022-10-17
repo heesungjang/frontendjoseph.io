@@ -7,7 +7,7 @@ export const BlogTitle = styled.h2`
   font-size: ${(p) => p.theme.font.xl2};
   font-weight: ${(p) => p.theme.fontWeight.medium};
   width: fit-content;
-  color: ${(p) => p.theme.black};
+  color: ${(p) => p.theme.default};
 `;
 
 export const BlogDescription = styled.span`

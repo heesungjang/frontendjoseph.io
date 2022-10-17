@@ -3,8 +3,8 @@ import { faker } from '@faker-js/faker';
 import { build, perBuild } from '@jackfranklin/test-data-bot';
 
 import { renderWithThemeProvider } from '../wrappers/withProvider';
-import { Post, Tag } from '../../lib/types';
-import BlogPostCard from '../../components/BlogPostCard';
+import { Post, Tag } from '../../../lib/types';
+import BlogPostCard from '../../BlogPostCard';
 
 const buildTag = build<Tag>({
   fields: {

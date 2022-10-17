@@ -1,5 +1,5 @@
 name: Deploy Heelog
-on: [push, pull_request]
+on: [push]
 jobs:
   vercel:
     runs-on: ubuntu-latest
