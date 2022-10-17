@@ -11,7 +11,7 @@ import {
 import { isFullBlock } from '@notionhq/client';
 // Components
 import styled from 'styled-components';
-import { BlogPost } from '../components/BlogPost';
+import { BlogPostContent } from '../components/BlogPostContent';
 
 const Utterances = dynamic(() => import('../components/shared/Utterances'));
 const databaseId = process.env.NOTION_DATABASE_ID;
@@ -30,7 +30,7 @@ export default function DetailPage({ page, blocks, frontmatter }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <BlogPost page={page} blocks={blocks} />
+      <BlogPostContent page={page} blocks={blocks} />
       <Utterances />
     </PostLayout>
   );

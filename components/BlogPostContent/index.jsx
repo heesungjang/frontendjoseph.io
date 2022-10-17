@@ -4,7 +4,7 @@ import { Block, Text } from '../Block';
 import { Divider } from '../Layout/FrontPageLayout/styles';
 import { ArticleWrapper, Created, GoBack, H1Title } from './styles';
 
-export const BlogPost = ({ page, blocks }) => {
+export const BlogPostContent = ({ page, blocks }) => {
   return (
     <ArticleWrapper>
       <Link href="/">
