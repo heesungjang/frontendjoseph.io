@@ -1,13 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import { ThemeModeProvider } from '../../hooks/useTheme';
-import theme from '../../styles/theme';
+import { ThemeModeProvider } from '../../../hooks/useTheme';
+import theme from '../../../styles/theme';
 import userEvent from '@testing-library/user-event';
-import Toggle, {
-  ToggleOff,
-  ToggleOn,
-  ToggleSwitch,
-} from '../../components/Toggle/index';
+import Toggle, { ToggleOff, ToggleOn, ToggleSwitch } from '../../Toggle/index';
 import { renderWithThemeProvider } from '../wrappers/withProvider';
 
 describe('Toggle Button', () => {

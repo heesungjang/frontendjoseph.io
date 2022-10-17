@@ -1,8 +1,8 @@
 import React from 'react';
-import theme from '../../styles/theme';
+import theme from '../../../styles/theme';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import { ThemeModeProvider } from '../../hooks/useTheme';
+import { ThemeModeProvider } from '../../../hooks/useTheme';
 
 export const renderWithThemeProvider = (Component: React.ReactNode) => {
   const utils = render(
