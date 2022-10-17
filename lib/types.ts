@@ -1,6 +1,5 @@
 export type Post = {
   id: string;
-  cover: string;
   title: string;
   tags: Tag[];
   description: string;
