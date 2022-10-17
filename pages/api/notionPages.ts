@@ -6,7 +6,6 @@ import {
 } from '@notionhq/client';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
-// umR9Aow&fi3yu*nY7n4s
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
