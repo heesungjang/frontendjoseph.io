@@ -1,22 +1,23 @@
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import { ThemeModeProvider } from '../../../hooks/useTheme';
-import theme from '../../../styles/theme';
+import { ThemeModeProvider } from '../../hooks/useTheme';
+import theme from '../../styles/theme';
 import userEvent from '@testing-library/user-event';
-import Toggle, { ToggleOff, ToggleOn, ToggleSwitch } from '../index';
+import Toggle, {
+  ToggleOff,
+  ToggleOn,
+  ToggleSwitch,
+} from '../../components/Toggle/index';
+import { renderWithThemeProvider } from '../wrappers/withProvider';
 
 describe('Toggle Button', () => {
   beforeEach(() => {
-    render(
-      <ThemeProvider theme={theme}>
-        <ThemeModeProvider>
-          <Toggle>
-            <ToggleSwitch />
-            <ToggleOn>Dark Mode</ToggleOn>
-            <ToggleOff>Light Mode</ToggleOff>
-          </Toggle>
-        </ThemeModeProvider>
-      </ThemeProvider>
+    renderWithThemeProvider(
+      <Toggle>
+        <ToggleSwitch />
+        <ToggleOn>Dark Mode</ToggleOn>
+        <ToggleOff>Light Mode</ToggleOff>
+      </Toggle>
     );
   });
   it('renders a toggle component', () => {

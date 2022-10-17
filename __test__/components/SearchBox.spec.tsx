@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import SearchBox from '../index';
+import SearchBox from '../../components/SearchBox/index';
 import { ThemeProvider } from 'styled-components';
-import theme from '../../../styles/theme';
+import theme from '../../styles/theme';
 import userEvent from '@testing-library/user-event';
 
 describe('Search Box', () => {
