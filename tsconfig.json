@@ -21,6 +21,7 @@
     "**/*.tsx",
     "styled.d.ts",
     "**/*.js",
+    "**/*.mjs",
     "**/*.jsx"
   ],
   "exclude": ["node_modules"]

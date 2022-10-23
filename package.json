@@ -1,5 +1,6 @@
 {
   "name": "notion-blog-template",
+  "sideEffects": false,
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +10,12 @@
     "lint": "next lint",
     "postbuild": "next-sitemap",
     "test-dev": "jest --watch",
-    "test": "jest"
+    "test": "jest",
+    "analyze-bundle": "ANALYZE=true yarn build"
   },
   "dependencies": {
     "@blazity/next-image-proxy": "^1.0.2",
+    "@next/bundle-analyzer": "^12.3.1",
     "@notionhq/client": "^2.2.0",
     "fontsource-noto-sans-kr": "^4.0.0",
     "framer-motion": "^7.3.6",

@@ -10,10 +10,7 @@ import {
   Title,
 } from './styles';
 
-const Dog = dynamic(() => import('../Dog'), {
-  ssr: false,
-  loading: () => null,
-});
+import Dog from '../Dog';
 
 const Description = ({ frontmatter }: { frontmatter: Frontmatter }) => {
   return (

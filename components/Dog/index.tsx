@@ -5,7 +5,20 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { loadGLTFModel } from '../../lib/models';
 
 // packages
-import * as THREE from 'three';
+import { Vector3 } from 'three/src/math/Vector3.js';
+import { Scene } from 'three/src/scenes/Scene.js';
+import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer.js';
+import { OrthographicCamera } from 'three/src/cameras/OrthographicCamera.js';
+import { AmbientLight } from 'three/src/lights/AmbientLight.js';
+import { sRGBEncoding } from 'three/src/constants.js';
+import // Vector3,
+// Scene,
+// WebGLRenderer,
+// OrthographicCamera,
+// sRGBEncoding,
+// AmbientLight,
+'three';
+
 import styled from 'styled-components';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -14,15 +27,11 @@ const ThreeDog: React.FC = () => {
   const [_, setLoading] = useState<boolean>(true);
   const [renderer, setRenderer] = useState<any>();
   const [_camera, setCamera] = useState<any>();
-  const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0));
+  const [target] = useState(new Vector3(-0.5, 1.2, 0));
   const [initialCameraPosition] = useState(
-    new THREE.Vector3(
-      20 * Math.sin(0.2 * Math.PI),
-      10,
-      20 * Math.cos(0.2 * Math.PI)
-    )
+    new Vector3(20 * Math.sin(0.2 * Math.PI), 10, 20 * Math.cos(0.2 * Math.PI))
   );
-  const [scene] = useState(new THREE.Scene());
+  const [scene] = useState(new Scene());
   const [_controls, setControls] = useState<any>();
 
   const handleWindowResize = useCallback(() => {
@@ -45,19 +54,19 @@ const ThreeDog: React.FC = () => {
       const scW = container.clientWidth;
       const scH = container.clientHeight;
 
-      const renderer = new THREE.WebGLRenderer({
+      const renderer = new WebGLRenderer({
         antialias: true,
         alpha: true,
       });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
 
-      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.outputEncoding = sRGBEncoding;
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
       const scale = scH * 0.01 + 4;
-      const camera = new THREE.OrthographicCamera(
+      const camera = new OrthographicCamera(
         -scale,
         scale,
         scale,
@@ -69,7 +78,7 @@ const ThreeDog: React.FC = () => {
       camera.lookAt(target);
       setCamera(camera);
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
+      const ambientLight = new AmbientLight(0xcccccc, 1);
       scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);

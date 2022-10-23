@@ -43,8 +43,12 @@ export default Main;
 
 export const getStaticProps = async () => {
   const databaseId = process.env.NOTION_DATABASE_ID;
-  const { posts } = await fetchPosts(databaseId!);
-  const frontmatter = await fetchFrontMatter(databaseId!);
+
+  const results = await Promise.all([
+    fetchPosts(databaseId!),
+    fetchFrontMatter(databaseId!),
+  ]);
+  const [{ posts }, frontmatter] = results;
 
   return {
     props: {
