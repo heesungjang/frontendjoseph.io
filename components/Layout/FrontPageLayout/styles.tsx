@@ -27,7 +27,6 @@ export const ContentWrapper = styled.div<{ loading: string }>`
   ${media.greaterThan('md')`
   width: 620px;
   margin: 0 40px;
-  
   `};
 
   ${media.greaterThan('lg')`

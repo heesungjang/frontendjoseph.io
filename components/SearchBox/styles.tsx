@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../styles/media';
 
 export const SearchContainer = styled.div`
   position: relative;
@@ -26,6 +27,10 @@ export const SearchInput = styled.input`
   transition: all 0.2s;
   padding-left: 32px;
   padding-right: 3px;
+
+  ${media.lessThan('md')`
+    font-size:16px;
+  `};
 `;
 
 export const DescriptionText = styled.div`
