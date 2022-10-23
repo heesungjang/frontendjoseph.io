@@ -11,13 +11,6 @@ import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer.js';
 import { OrthographicCamera } from 'three/src/cameras/OrthographicCamera.js';
 import { AmbientLight } from 'three/src/lights/AmbientLight.js';
 import { sRGBEncoding } from 'three/src/constants.js';
-import // Vector3,
-// Scene,
-// WebGLRenderer,
-// OrthographicCamera,
-// sRGBEncoding,
-// AmbientLight,
-'three';
 
 import styled from 'styled-components';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
