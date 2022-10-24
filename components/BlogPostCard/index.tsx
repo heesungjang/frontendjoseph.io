@@ -13,7 +13,7 @@ import {
 const BlogPostCard = ({ post }: { post: Post }) => {
   if (post.isHidden) return null;
   return (
-    <Link href={`/${post.id}`} key={post.id}>
+    <Link href={`/${post.id}`} key={post.id} prefetch={false}>
       <PostWrapper aria-label="blog-post-card">
         <PostInfoContainer>
           <BlogTitle aria-label="blog-title">{post.title}</BlogTitle>

@@ -5,12 +5,14 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { loadGLTFModel } from '../../lib/models';
 
 // packages
-import { Vector3 } from 'three/src/math/Vector3.js';
-import { Scene } from 'three/src/scenes/Scene.js';
-import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer.js';
-import { OrthographicCamera } from 'three/src/cameras/OrthographicCamera.js';
-import { AmbientLight } from 'three/src/lights/AmbientLight.js';
-import { sRGBEncoding } from 'three/src/constants.js';
+import {
+  Vector3,
+  Scene,
+  WebGLRenderer,
+  OrthographicCamera,
+  AmbientLight,
+  sRGBEncoding,
+} from 'three';
 
 import styled from 'styled-components';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
