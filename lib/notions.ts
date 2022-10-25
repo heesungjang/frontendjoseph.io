@@ -62,6 +62,10 @@ export const fetchPosts = async (databaseId: string) => {
     }
   }
 
+  posts.sort(
+    (objA, objB) => Number(new Date(objB.date)) - Number(new Date(objA.date))
+  );
+
   return { posts };
 };
 
