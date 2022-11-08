@@ -63,8 +63,9 @@ export const H3 = styled.h3`
 `;
 
 export const Paragraph = styled.div`
-  text-align: justify;
+  /* text-align: justify; */
   margin-top: 16px;
+  width: 100%;
 `;
 
 export const HR = styled.hr`
@@ -74,7 +75,7 @@ export const HR = styled.hr`
 `;
 
 export const LinkText = styled.a`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: ${(p) => p.theme.fontWeight.normal};
   text-decoration: underline;
   text-decoration-color: ${(p) => p.theme.gray};
@@ -119,10 +120,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const PostImage = styled(Image)`
-  object-fit: scale-down;
-  width: unset !important;
   position: relative !important;
-  height: 100% !important;
 `;
 
 export const Summary = styled.summary`

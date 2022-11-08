@@ -12,7 +12,6 @@ export const BlogTitle = styled.h2`
 
 export const BlogDescription = styled.span`
   font-size: ${(p) => p.theme.font.sm};
-  font-weight: ${(p) => p.theme.fontWeight.normal};
   color: ${(p) => p.theme.gray};
   line-height: 1.5;
 `;

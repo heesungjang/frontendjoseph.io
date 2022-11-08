@@ -11,6 +11,9 @@ const nextConfig = {
     domains: ['localhost', '*'],
   },
 
+  compiler: {
+    styledComponents: true,
+  },
   swcMinify: true,
 };
 

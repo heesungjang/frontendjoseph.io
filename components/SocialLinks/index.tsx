@@ -14,10 +14,9 @@ const SocialLinks = () => {
           <Link
             href={socialType === 'email' ? `mailto:${link}` : link}
             key={idx}
+            rel="noopener noreferrer"
           >
-            <a rel="noopener noreferrer">
-              <SocialIcon name={socialType} />
-            </a>
+            <SocialIcon name={socialType} />
           </Link>
         );
       })}

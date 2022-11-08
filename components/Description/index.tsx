@@ -10,7 +10,6 @@ import {
   Title,
 } from './styles';
 
-
 const Dog = dynamic(() => import('../Dog'), {
   ssr: false,
   loading: () => null,

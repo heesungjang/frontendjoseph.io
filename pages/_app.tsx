@@ -5,23 +5,25 @@ import Footer from '../components/shared/Footer';
 import Header from '../components/shared/Header';
 import { Transition } from '../components/Layout/Transition';
 // Styles
-import 'fontsource-noto-sans-kr';
 import theme, { dark as darkTheme } from '../styles/theme';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../styles/GlobalStyle';
 import { ThemeModeProvider, useThemeMode } from '../hooks/useTheme';
-
+import { Inter } from '@next/font/google';
+const inter = Inter();
 function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeModeProvider>
-      <CustomApp>
-        <Header />
-        <Transition>
-          <Component {...pageProps} />
-        </Transition>
-        <Footer />
-      </CustomApp>
-    </ThemeModeProvider>
+    <main className={inter.className}>
+      <ThemeModeProvider>
+        <CustomApp>
+          <Header />
+          <Transition>
+            <Component {...pageProps} />
+          </Transition>
+          <Footer />
+        </CustomApp>
+      </ThemeModeProvider>
+    </main>
   );
 }
 

@@ -20,7 +20,7 @@ export const BlogPostContent = ({ page, blocks }) => {
       </Created>
       <Created>{page.properties.Date.date?.start.slice(0, 10)}</Created>
 
-      <Divider mt={20} />
+      {/* <Divider mt={20} /> */}
       <section>
         {blocks.map((block) => (
           <Fragment key={block.id}>{Block(block)}</Fragment>
