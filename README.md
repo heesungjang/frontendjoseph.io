@@ -1,11 +1,32 @@
-## 👋 소개
+# FrontendJoseph
 
-한동안 벨로퍼트님이 만드신 **Velog** 플랫폼으로 블로그를 운영했습니다.
+**Visit my blog** @ [**here**](https://frontendjoseph.io)
 
-최근 **정진혁**님이 만드신 **[Gatsby blog 테마](https://github.com/zoomkoding/zoomkoding-gatsby-blog)를** 사용하면서 **나만의 블로그** 만들기에 관심이 생겼고 저만의 취향이 가득한 블로그를 만들어 봤습니다.
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Database**: [Notion](https://developers.notion.com/)
+- **Authentication**: [NextAuth.js](https://next-auth.js.org/)
+- **CLI**: [oclif](https://oclif.io)
+- **Deployment**: [Vercel](https://vercel.com)
+- **Styling**: [Styled-Components](https://styled-components.com/)
+- **3D**: [Three.JS](https://threejs.org/)
 
-정작 사이트 생성을 위해서 **Next.js** 프레임워크를 사용했고 **Notion API**를 연동해 Notion으로 콘텐츠 관리를 하고 있습니다.
+## Overview
 
-![](https://velog.velcdn.com/images/heesungj7/post/e6835674-3ffa-4e43-9dae-e185726cfc10/image.png)
+- `components/*` - Building block components with styles and test.
+- `lib/*` - Short for "library", a collection of helpful utilities or code for external and internal services.
+- `pages/api/*` - [API Routes](https://nextjs.org/docs/api-routes/introduction) have some server side codes.
+- `pages/*` - Static pre-rendered blog pages using data quried from Notion table.
+- `pages/sitemap.xml.tsx` - Automatically generated sitemap.
+- `public/*` - Static assets including fonts and images.
+- `styles/*` - A small amount of global styles. I'm mostly using styled-components with bit of framer for transition animation.
 
-테마가 궁금하시다면 [블로그 페이지](https://heelog.dev/) 방문해주세요 🙏
+## Running Locally
+
+This application requires Node.js v16.13+.
+
+```bash
+git clone https://github.com/heesungjang/frontendjoseph.io.git
+cd frontendjoseph.io
+yarn i
+yarn run dev
+```

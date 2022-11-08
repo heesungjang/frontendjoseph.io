@@ -9,6 +9,7 @@ import BlogPosts from '../components/BlogPosts';
 import Description from '../components/Description';
 import SearchBox from '../components/SearchBox';
 import FrontPageLayout from '../components/Layout/FrontPageLayout';
+
 // Styles
 import { motion } from 'framer-motion';
 import styled from 'styled-components';

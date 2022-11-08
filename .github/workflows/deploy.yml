@@ -1,4 +1,4 @@
-name: Deploy Heelog
+name: Deploy frontendjoseph
 on: [push]
 jobs:
   vercel:

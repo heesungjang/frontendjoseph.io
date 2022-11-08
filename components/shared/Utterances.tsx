@@ -7,7 +7,7 @@ const Utterances = () => {
     const scriptElem = document.createElement('script');
     scriptElem.src = 'https://utteranc.es/client.js';
     scriptElem.async = true;
-    scriptElem.setAttribute('repo', 'heesungjang/heelog.dev');
+    scriptElem.setAttribute('repo', 'heesungjang/frontendjoseph.io');
     scriptElem.setAttribute('issue-term', 'title');
     scriptElem.setAttribute('theme', 'github-light');
     scriptElem.setAttribute('label', 'blog-comment');

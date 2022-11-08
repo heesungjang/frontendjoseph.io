@@ -26,7 +26,7 @@ export default function DetailPage({ page, blocks, frontmatter }) {
         <title>{`${frontmatter.title[0].text.content} | ${page.properties.Name.title[0].plain_text}`}</title>
         <meta
           property="og:title"
-          content={`Heelog | ${page.properties.Name.title[0].plain_text}`}
+          content={`FEJoseph | ${page.properties.Name.title[0].plain_text}`}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -1,4 +1,4 @@
-const siteUrl = 'https://heelog.dev';
+const siteUrl = 'https://frontendjoseph.io';
 module.exports = {
   siteUrl,
   generateRobotsTxt: true,
