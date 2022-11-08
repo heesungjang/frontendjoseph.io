@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const Footer: React.FC = () => {
   return (
     <FooterWrapper>
-      <FooterText>Copyright © Heesung Jang</FooterText>
+      <FooterText>Copyright © Joseph Jang</FooterText>
     </FooterWrapper>
   );
 };
