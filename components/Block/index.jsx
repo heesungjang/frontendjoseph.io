@@ -20,7 +20,6 @@ import { Fragment } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export const Text = ({ text }) => {
   if (!text) {

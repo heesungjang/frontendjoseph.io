@@ -1174,6 +1174,11 @@
   resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-7.6.0.tgz#9ea331766084288634a9247fcd8b84f16ff4ba07"
   integrity sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==
 
+"@fontsource/inter@^4.5.14":
+  version "4.5.14"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.14.tgz#3944b809aa7bf27dacd20bdc04a49fb738959724"
+  integrity sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==
+
 "@humanwhocodes/config-array@^0.10.4":
   version "0.10.4"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.10.4.tgz#01e7366e57d2ad104feea63e72248f22015c520c"
@@ -1530,11 +1535,6 @@
   integrity sha512-W+fIIIaFU7Kct7Okx91C7XDRGolv/w2RUenX2yZFeeNVcuVzDIKUcNmckrYbYcwrNQUSXmtwrs3g8xwast0YtA==
   dependencies:
     glob "7.1.7"
-
-"@next/font@^13.0.2":
-  version "13.0.2"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.0.2.tgz#509467d6e4a04b67de2e5f21fd682227c2240cdb"
-  integrity sha512-tLbyZCA1uF8HjbUEN5c4zB453yEzt5aT9VDhXPw1/eJhX4U0Q4lD3s3Bs+gpCjuLrEgILd56jQuzxgrMnWHH8A==
 
 "@next/swc-android-arm-eabi@13.0.2":
   version "13.0.2"

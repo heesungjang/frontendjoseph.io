@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@blazity/next-image-proxy": "^1.0.2",
-    "@next/font": "^13.0.2",
+    "@fontsource/inter": "^4.5.14",
     "@notionhq/client": "^2.2.0",
     "framer-motion": "^7.3.6",
     "next": "^13.0.2",
@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "@next/bundle-analyzer": "^12.3.1",
     "@jackfranklin/test-data-bot": "^2.0.0",
+    "@next/bundle-analyzer": "^12.3.1",
     "@svgr/webpack": "^6.3.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

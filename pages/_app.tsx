@@ -9,8 +9,8 @@ import theme, { dark as darkTheme } from '../styles/theme';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../styles/GlobalStyle';
 import { ThemeModeProvider, useThemeMode } from '../hooks/useTheme';
-import { Inter } from '@next/font/google';
-const inter = Inter();
+import '@fontsource/inter';
+
 function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeModeProvider>
@@ -32,7 +32,7 @@ function CustomApp({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme={isDark ? darkTheme : theme}>
       <GlobalStyle />
-      <main className={inter.className}>{children}</main>
+      {children}
     </ThemeProvider>
   );
 }
