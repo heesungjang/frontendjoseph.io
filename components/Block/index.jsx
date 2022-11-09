@@ -130,6 +130,8 @@ export const Block = (block) => {
             src={`/api/imageProxy?imageUrl=${src}`}
             layout="fill"
             alt={caption ? caption : 'image'}
+            blur={true}
+            blurDataURL={`/api/imageProxy?imageUrl=${src}`}
           />
           {caption && <figcaption>{caption}</figcaption>}
         </ImageWrapper>
