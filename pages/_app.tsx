@@ -13,17 +13,15 @@ import { Inter } from '@next/font/google';
 const inter = Inter();
 function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={inter.className}>
-      <ThemeModeProvider>
-        <CustomApp>
-          <Header />
-          <Transition>
-            <Component {...pageProps} />
-          </Transition>
-          <Footer />
-        </CustomApp>
-      </ThemeModeProvider>
-    </main>
+    <ThemeModeProvider>
+      <CustomApp>
+        <Header />
+        <Transition>
+          <Component {...pageProps} />
+        </Transition>
+        <Footer />
+      </CustomApp>
+    </ThemeModeProvider>
   );
 }
 
@@ -34,7 +32,7 @@ function CustomApp({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme={isDark ? darkTheme : theme}>
       <GlobalStyle />
-      {children}
+      <main className={inter.className}>{children}</main>
     </ThemeProvider>
   );
 }

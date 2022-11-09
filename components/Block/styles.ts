@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import styled from 'styled-components';
 import { NotionColorsTypes } from '../../lib/types';
 export const TextSpan = styled.span<{
@@ -112,7 +112,7 @@ export const CalloutBulb = styled.div`
 
 export const ImageWrapper = styled.div`
   position: relative;
-  margin-top: 20px;
+  margin: 20px, 0;
   height: 100%;
   span {
     position: unset !important;
@@ -120,7 +120,10 @@ export const ImageWrapper = styled.div`
 `;
 
 export const PostImage = styled(Image)`
+  object-fit: scale-down;
+  width: unset !important;
   position: relative !important;
+  height: 100% !important;
 `;
 
 export const Summary = styled.summary`
