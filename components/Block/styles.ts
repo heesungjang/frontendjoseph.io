@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import styled from 'styled-components';
 import { NotionColorsTypes } from '../../lib/types';
 export const TextSpan = styled.span<{

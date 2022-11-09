@@ -1,15 +1,11 @@
-import Link from 'next/link';
 import { Fragment } from 'react';
 import { Block, Text } from '../Block';
-import { Divider } from '../Layout/FrontPageLayout/styles';
 import { ArticleWrapper, Created, GoBack, H1Title } from './styles';
 
 export const BlogPostContent = ({ page, blocks }) => {
   return (
     <ArticleWrapper>
-      <Link href="/">
-        <GoBack>← Go Back</GoBack>
-      </Link>
+      <GoBack href="/">← Go Back</GoBack>
       <H1Title>
         <Text text={page.properties.Name.title} />
       </H1Title>

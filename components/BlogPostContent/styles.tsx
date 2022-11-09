@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import { media } from '../../styles/media';
 import { H1 } from '../Block/styles';
@@ -18,7 +19,7 @@ export const ArticleWrapper = styled.article`
   `};
 `;
 
-export const GoBack = styled.a`
+export const GoBack = styled(Link)`
   display: block;
   width: fit-content;
   font-size: ${(p) => p.theme.font.xl};
