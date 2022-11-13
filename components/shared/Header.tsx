@@ -18,9 +18,17 @@ const Header = () => {
   return (
     <HeaderWrapper scrollPosition={scrollPosition}>
       <HeaderContent>
-        <Link href="/">
-          <Nav>Blog</Nav>
-        </Link>
+        <LeftContainer>
+          <Link href="/">
+            <Nav>Articles</Nav>
+          </Link>
+          {/* <Link href="/project">
+            <Nav>Project</Nav>
+          </Link> */}
+          <Link href="/about">
+            <Nav>About</Nav>
+          </Link>
+        </LeftContainer>
         <Toggle>
           <ToggleSwitch />
           <ToggleOn>Dark Mode</ToggleOn>
@@ -46,6 +54,15 @@ const HeaderWrapper = styled.div<{ scrollPosition: number }>`
   border-bottom-color: #ffff;
   border-bottom: ${(p) =>
     p.scrollPosition >= 30 ? `1px solid ${p.theme.lightgray}` : null};
+`;
+
+const LeftContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 16px;
 `;
 
 const HeaderContent = styled.div`
