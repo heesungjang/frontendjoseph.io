@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
           <meta name="description" content="Dev Blog" />
           <meta
             name="google-site-verification"
-            content="ChvAiVmZw6S-b5QSs8uDVMABJaNOYMoGBX-TH3wPx-Q"
+            content="BQthgugRr_V13dv-pJtMOXR3NWHxEfGmi0nruKlxO10"
           />
         </Head>
         <body>
