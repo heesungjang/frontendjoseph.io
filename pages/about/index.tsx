@@ -15,7 +15,7 @@ const About = () => {
         <SocialLinks />
         <Divider mt={20} />
 
-        <Name>Hi, I&apos;m a Joseph</Name>
+        <Name>Hi, I&apos;m Joseph</Name>
         <SubTitle>
           I&apos;m a frontend engineer currently living in Queensland,
           Australia.
