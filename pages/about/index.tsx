@@ -28,7 +28,7 @@ const About = () => {
         <Text>· create value with technology.</Text>
         <Text>
           · believe that programming is the best way to have an impact on
-          people&apos;s daily lives.
+          people&apos;s everyday life.
         </Text>
         <Text>· an impact-driven software engineer wannabe.</Text>
       </Layout>
