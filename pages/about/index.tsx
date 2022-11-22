@@ -20,17 +20,17 @@ const About = () => {
           I&apos;m a frontend engineer currently living in Queensland,
           Australia.
         </SubTitle>
-        <Text>· admire those who appreciate the aesthetic.</Text>
-        <Text>· coffee, comics and triple double u enthusiast.</Text>
+        <Text>admire those who appreciate the aesthetic.</Text>
+        <Text>coffee, comics and triple double u enthusiast.</Text>
         <Text>
-          · appreciate the virtue of spending time on seemingly useless things.
+          appreciate the virtue of spending time on seemingly useless things.
         </Text>
-        <Text>· create value with technology.</Text>
+        <Text>create value with technology.</Text>
         <Text>
-          · believe that programming is the best way to have an impact on
+          believe that programming is the best way to have an impact on
           people&apos;s everyday life.
         </Text>
-        <Text>· an impact-driven software engineer wannabe.</Text>
+        <Text>an impact-driven software engineer wannabe.</Text>
       </Layout>
     </Wrapper>
   );
@@ -69,6 +69,9 @@ const Text = styled.span`
   font-size: ${(p) => p.theme.font.sm};
   color: ${(p) => p.theme.gray};
   line-height: 1.5;
+  ::before {
+    content: '· ';
+  }
 `;
 
 const Layout = styled.div`
