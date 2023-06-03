@@ -70,7 +70,7 @@ export const dark: ThemeType = {
   fontWeight,
   notionColors,
   bg: '#171717',
-  default: '#F5F5F5',
+  default: '#D4D4D4',
 
   gray: '#888888',
   darkgray: '#D4D4D4',
