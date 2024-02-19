@@ -22,9 +22,13 @@ const ThreeDog: React.FC = () => {
   const [_, setLoading] = useState<boolean>(true);
   const [renderer, setRenderer] = useState<any>();
   const [_camera, setCamera] = useState<any>();
-  const [target] = useState(new Vector3(-0.5, 1.2, 0));
+  const [target] = useState(new Vector3(-0.8, 1.2, 0));
   const [initialCameraPosition] = useState(
-    new Vector3(20 * Math.sin(0.2 * Math.PI), 10, 20 * Math.cos(0.2 * Math.PI))
+    new Vector3(
+      20 * Math.sin(0.2 * Math.PI) + 5,
+      10,
+      20 * Math.cos(0.2 * Math.PI)
+    )
   );
   const [scene] = useState(new Scene());
   const [_controls, setControls] = useState<any>();

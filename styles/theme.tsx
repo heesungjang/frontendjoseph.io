@@ -58,11 +58,11 @@ export const light = {
   font,
   fontWeight,
   notionColors,
-  bg: '#FFFFFF',
-  default: '#404040',
+  bg: '#FFFBF5',
+  default: 'black',
 
-  gray: '#79797A',
-  darkgray: '#404040',
+  gray: 'black',
+  darkgray: 'black',
   lightgray: '#F1F1EF',
 };
 export const dark: ThemeType = {

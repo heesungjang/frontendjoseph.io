@@ -24,6 +24,7 @@ export const Title = styled.h1`
   color: ${(p) => p.theme.darkgray};
   font-weight: ${(p) => p.theme.fontWeight.semibold};
   font-size: ${(p) => p.theme.font.xl4};
+  margin-bottom: 80px;
 `;
 
 export const DescriptionText = styled.div`

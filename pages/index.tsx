@@ -15,6 +15,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 // Types
 import { Frontmatter, Post } from '../lib/types';
+import { getRegExp } from 'korean-regexp';
 
 const Main = ({
   posts,

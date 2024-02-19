@@ -20,7 +20,7 @@ const BlogPostCard = ({ post }: { post: Post }) => {
           <BlogDescription aria-label="blog-description">
             {post.description}
           </BlogDescription>
-          <TagContainer>
+          {/* <TagContainer>
             {post.tags.map((tag) => (
               <Tag
                 data-testid="blog-tag"
@@ -31,7 +31,7 @@ const BlogPostCard = ({ post }: { post: Post }) => {
                 {tag.name}
               </Tag>
             ))}
-          </TagContainer>
+          </TagContainer> */}
         </PostInfoContainer>
       </PostWrapper>
     </Link>

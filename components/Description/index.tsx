@@ -18,7 +18,11 @@ const Dog = dynamic(() => import('../Dog'), {
 const Description = ({ frontmatter }: { frontmatter: Frontmatter }) => {
   return (
     <DescriptionWrapper>
-      <div>
+      <div
+        style={{
+          marginTop: '60px',
+        }}
+      >
         <Title>{frontmatter.title}</Title>
         <DescriptionText>{frontmatter.description}</DescriptionText>
         <SocialLinks />

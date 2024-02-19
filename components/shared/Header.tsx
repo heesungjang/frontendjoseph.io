@@ -20,20 +20,20 @@ const Header = () => {
       <HeaderContent>
         <LeftContainer>
           <Link href="/">
-            <Nav>Articles</Nav>
+            <Nav>블로그</Nav>
           </Link>
           {/* <Link href="/project">
             <Nav>Project</Nav>
           </Link> */}
           <Link href="/about">
-            <Nav>About</Nav>
+            <Nav>어바웃</Nav>
           </Link>
         </LeftContainer>
-        <Toggle>
+        {/* <Toggle>
           <ToggleSwitch />
           <ToggleOn>Dark Mode</ToggleOn>
           <ToggleOff>Light Mode</ToggleOff>
-        </Toggle>
+        </Toggle> */}
       </HeaderContent>
     </HeaderWrapper>
   );
@@ -52,8 +52,8 @@ const HeaderWrapper = styled.div<{ scrollPosition: number }>`
   backdrop-filter: blur(10px);
 
   border-bottom-color: #ffff;
-  border-bottom: ${(p) =>
-    p.scrollPosition >= 30 ? `1px solid ${p.theme.lightgray}` : null};
+  /* border-bottom: ${(p) =>
+    p.scrollPosition >= 30 ? `1px solid ${p.theme.lightgray}` : null}; */
 `;
 
 const LeftContainer = styled.div`
@@ -87,7 +87,7 @@ const HeaderContent = styled.div`
 
 const Nav = styled.span`
   font-size: ${(p) => p.theme.font.lg};
-  font-weight: ${(p) => p.theme.fontWeight.semibold};
+  font-weight: ${(p) => p.theme.fontWeight.medium};
   cursor: pointer;
 `;
 

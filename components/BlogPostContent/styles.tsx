@@ -26,7 +26,8 @@ export const GoBack = styled(Link)`
   color: ${(p) => p.theme.gray};
   font-weight: ${(p) => p.theme.fontWeight.semibold};
   opacity: 0.8;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   cursor: pointer;
 `;
 
@@ -41,7 +42,7 @@ export const Created = styled.div`
   margin-top: 10px;
   text-transform: uppercase;
   color: ${({ theme }) => theme.gray};
-  font-size: ${(p) => p.theme.font.xs};
+  font-size: ${(p) => p.theme.font.sm};
   font-weight: ${(p) => p.theme.fontWeight.medium};
   opacity: 0.8;
 `;

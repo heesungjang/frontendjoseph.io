@@ -4,7 +4,7 @@ import { TagSize } from '../../styles/theme';
 
 export const BlogTitle = styled.h2`
   line-height: 1.2;
-  font-size: ${(p) => p.theme.font.xl2};
+  font-size: ${(p) => p.theme.font.xl};
   font-weight: ${(p) => p.theme.fontWeight.medium};
   width: fit-content;
   color: ${(p) => p.theme.default};
@@ -14,6 +14,7 @@ export const BlogDescription = styled.span`
   font-size: ${(p) => p.theme.font.sm};
   color: ${(p) => p.theme.gray};
   line-height: 1.5;
+  opacity: 0.7;
 `;
 
 export const PostInfoContainer = styled.div`
