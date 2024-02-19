@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 // Components
 import Footer from '../components/shared/Footer';
 import Header from '../components/shared/Header';
-import { Noto_Sans_KR } from '@next/font/google';
+import { Noto_Sans_KR } from 'next/font/google';
 // Styles
 import theme, { dark as darkTheme } from '../styles/theme';
 import { ThemeProvider } from 'styled-components';
