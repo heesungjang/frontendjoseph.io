@@ -9,11 +9,7 @@ import {
   ThreeDContainer,
   Title,
 } from './styles';
-
-const Dog = dynamic(() => import('../Dog'), {
-  ssr: false,
-  loading: () => null,
-});
+import ThreeDog from '../Dog';
 
 const Description = ({ frontmatter }: { frontmatter: Frontmatter }) => {
   return (
@@ -29,7 +25,7 @@ const Description = ({ frontmatter }: { frontmatter: Frontmatter }) => {
       </div>
 
       <ThreeDContainer>
-        <Dog />
+        <ThreeDog />
       </ThreeDContainer>
     </DescriptionWrapper>
   );
