@@ -11,6 +11,11 @@ export const TextSpan = styled.span<{
     strikethrough: boolean;
   };
 }>`
+  &::selection {
+    background: black; /* Background color of the selection */
+    color: white; /* Text color of the selection */
+  }
+  line-height: 1.7;
   font-size: ${(p) => (p.styles.code ? '14px' : '16px')};
   color: ${({ theme, styles: { color, code } }) =>
     code

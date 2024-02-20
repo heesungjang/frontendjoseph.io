@@ -23,7 +23,7 @@ export default function DetailPage({ page, blocks, frontmatter }) {
   return (
     <PostLayout>
       <Head>
-        <title>{`${frontmatter.title[0].text.content} | ${page.properties.Name.title[0].plain_text}`}</title>
+        <title>{`${page.properties.Name.title[0].plain_text} | heesungjang.dev`}</title>
         <meta
           property="og:title"
           content={`FEJoseph | ${page.properties.Name.title[0].plain_text}`}

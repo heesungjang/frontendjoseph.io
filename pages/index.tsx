@@ -29,7 +29,7 @@ const Main = ({
   return (
     <Layout exit={{ opacity: 0 }}>
       <Head>
-        <title>{frontmatter.title}</title>
+        <title>전체글 | heesungjang.dev</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FrontPageLayout>

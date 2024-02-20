@@ -29,7 +29,7 @@ const SearchBox = ({
           />
         </IconWrapper>
       </SearchContainer>
-      <Divider mt={20} mb="30px" />
+      <Divider mt={20} mb="50px" />
     </>
   );
 };
